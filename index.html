@@ -4,64 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surya Maddula</title>
-    
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            background-color: #fafafa; /* Friend's exact light bg */
-            color: #111111;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.7;
-            font-size: 16px;
-            display: flex;
-            justify-content: center;
-            padding: 40px 20px;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-        main { max-width: 650px; width: 100%; }
-        h1 {
-            font-size: 18px;
+        body {
+            background-color: #f8f9fa;
+            color: #212529;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            font-size: 16px;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .container {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+        .profile-section {
+            flex: 0 0 200px;
+        }
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .name {
+            font-size: 28px;
             font-weight: 700;
-            margin-bottom: 24px;
-            color: #111111;
+            margin: 20px 0 10px 0;
+            color: #111;
         }
         .socials {
-            margin-bottom: 40px;
-            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 30px;
         }
         .socials a {
-            color: #1d9bf0; /* Twitter blue */
+            color: #1da1f2;
             text-decoration: none;
-            border-bottom: 1px solid #1d9bf0;
-            margin-right: 20px;
+            font-size: 15px;
+            border-bottom: 1px solid #1da1f2;
+            padding-bottom: 2px;
         }
-        .socials a:hover { border-bottom-color: #0d8bd9; }
-        p {
+        .socials a:hover {
+            border-bottom-color: #0d8bd9;
+        }
+        .content-section {
+            flex: 1;
+        }
+        .bio {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        .content p {
+            font-size: 16px;
+            color: #495057;
             margin-bottom: 24px;
-            color: #333333;
+            line-height: 1.7;
         }
         a {
-            color: #1d9bf0;
+            color: #1da1f2;
             text-decoration: none;
-            border-bottom: 1px solid #1d9bf0;
+            border-bottom: 1px solid #1da1f2;
         }
-        a:hover { border-bottom-color: #0d8bd9; }
-        ::selection { background: #1d9bf0; color: white; }
-        @media (max-width: 600px) { body { padding: 30px 20px; } }
+        a:hover {
+            border-bottom-color: #0d8bd9;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .profile-section {
+                text-align: center;
+            }
+            body {
+                padding: 20px 15px;
+            }
+        }
     </style>
 </head>
 <body>
-    <main>
-        <h1>Surya Maddula</h1>
-        <div class="socials">
-            <a href="https://github.com/Surya893">GitHub</a>
-            <a href="https://twitter.com/suryamaddula_">Twitter</a>
-            <a href="https://linkedin.com/in/suryaseshamaddula">LinkedIn</a>
-            <a href="mailto:your@email.com">Email</a>
+    <div class="container">
+        <div class="profile-section">
+            <img src="photo.jpg" alt="Surya Maddula" class="profile-image">
+            <div class="name">Surya Maddula</div>
+            <div class="socials">
+                <a href="https://github.com/Surya893">GitHub</a>
+                <a href="https://twitter.com/suryamaddula_">Twitter</a>
+                <a href="https://linkedin.com/in/suryaseshamaddula">LinkedIn</a>
+                <a href="mailto:me@suryamaddula.com">Email</a>
+            </div>
         </div>
-        <p>I'm a founder, inventor, developer, & high school student.</p>
-        <p>I'm currently building <a href="https://whisperwave.in">Whisperwave</a>, where we're developing Active Noise Cancellation for Open, Uncontrolled Environments.</p>
-        <p>I've been building in tech & product since I was 12, consulted for MNCs like CIBC, Amazon Alexa, Shell, worked on Moonshots and developed ML Algorithms. Got my first granted patent at 15.</p>
-        <p>Before this, I was training LLMs under Prof. Alejandro from Columbia University. Youngest resident at Lossfunk, building resilient cloud-native infrastructure for Whisperwave.</p>
-    </main>
+        
+        <div class="content-section">
+            <p class="bio">I'm a founder, inventor, developer, & high school student.</p>
+            
+            <div class="content">
+                <p>I'm currently building <a href="https://whisperwave.in">Whisperwave</a>, where we're developing Active Noise Cancellation for Open, Uncontrolled Environments.</p>
+                <p>I've been building in tech & product since I was 12, consulted for MNCs like CIBC, Amazon Alexa, Shell, worked on Moonshots and developed ML Algorithms. Got my first granted patent at 15.</p>
+                <p>Before this, I was training LLMs under Prof. Alejandro from Columbia University. Youngest resident at Lossfunk, building resilient cloud-native infrastructure for Whisperwave.</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
