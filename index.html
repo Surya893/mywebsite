@@ -14,82 +14,94 @@
             background-color: #f8f9fa;
             color: #212529;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             font-size: 16px;
-            padding: 40px 20px;
-            max-width: 800px;
+            padding: 2rem 1.5rem;
+            max-width: 1000px;
             margin: 0 auto;
         }
         .container {
             display: flex;
-            gap: 40px;
+            gap: 3rem;
             align-items: flex-start;
         }
         .profile-section {
-            flex: 0 0 200px;
+            flex-shrink: 0;
+            width: 220px;
         }
         .profile-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 12px;
+            width: 200px;
+            height: 200px;
+            border-radius: 16px;
             object-fit: cover;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+            display: block;
+            margin-bottom: 1.5rem;
         }
         .name {
-            font-size: 28px;
-            font-weight: 700;
-            margin: 20px 0 10px 0;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
             color: #111;
+            line-height: 1.2;
         }
         .socials {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            margin-bottom: 30px;
+            gap: 0.75rem;
         }
         .socials a {
             color: #1da1f2;
             text-decoration: none;
             font-size: 15px;
+            font-weight: 500;
             border-bottom: 1px solid #1da1f2;
-            padding-bottom: 2px;
+            padding: 0.25rem 0;
+            transition: border-color 0.2s;
         }
         .socials a:hover {
             border-bottom-color: #0d8bd9;
         }
         .content-section {
             flex: 1;
+            min-width: 0;
         }
         .bio {
-            font-size: 18px;
-            font-weight: 500;
-            margin-bottom: 30px;
-            line-height: 1.5;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            line-height: 1.4;
+            color: #111;
         }
         .content p {
             font-size: 16px;
             color: #495057;
-            margin-bottom: 24px;
-            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            line-height: 1.75;
+            hyphens: auto;
+            word-break: break-word;
         }
-        a {
+        .content a {
             color: #1da1f2;
             text-decoration: none;
             border-bottom: 1px solid #1da1f2;
+            font-weight: 500;
         }
-        a:hover {
+        .content a:hover {
             border-bottom-color: #0d8bd9;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .container {
                 flex-direction: column;
-                gap: 30px;
+                gap: 2rem;
+                align-items: center;
             }
             .profile-section {
                 text-align: center;
+                width: auto;
             }
             body {
-                padding: 20px 15px;
+                padding: 1.5rem 1rem;
             }
         }
     </style>
