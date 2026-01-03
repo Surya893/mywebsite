@@ -7,106 +7,65 @@
     <meta name="description" content="founder, inventor, developer, & high school student.">
     
     <style>
-        /* RESET & BASICS */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             background-color: #ffffff;
             color: #111111;            
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.7;          /* Good readability */
+            line-height: 1.7;
             font-size: 16px;
             display: flex;
             justify-content: center;
             padding: 40px 20px;
         }
-
-        /* LAYOUT CONTAINER */
-        main {
-            max-width: 650px;
-            width: 100%;
-        }
-
-        /* TYPOGRAPHY */
+        main { max-width: 650px; width: 100%; }
         h1 {
             font-size: 18px;
             font-weight: 700;
             margin-bottom: 24px;
-            color: #ffffff;
+            color: #111111;
             letter-spacing: -0.02em;
         }
-
+        .socials {
+            margin: 20px 0 40px 0;
+            font-size: 16px;
+        }
+        .socials a {
+            color: #0066cc; /* Professional blue */
+            text-decoration: none;
+            border-bottom: 1px solid #0066cc;
+            margin-right: 20px;
+            transition: border-color 0.2s;
+        }
+        .socials a:hover { border-bottom-color: #004499; }
         p {
             margin-bottom: 24px;
-            color: #a1a1aa; /* Slightly muted text for body */
+            color: #333333; /* Readable dark gray */
         }
-
-        /* LINK STYLING */
-        a {
-            color: #ffffff;
-            text-decoration: none;
-            border-bottom: 1px solid #555; /* Subtle underline */
-            transition: border-color 0.2s, color 0.2s;
-        }
-
-        a:hover {
-            color: #ffffff;
-            border-bottom-color: #fff; /* Brighter on hover */
-        }
-
-        /* SELECTION HIGHLIGHT */
-        ::selection {
-            background: #333; /* Custom highlight color */
-            color: #fff;
-        }
-
-        /* MOBILE TWEAKS */
+        ::selection { background: #0066cc; color: white; }
         @media (max-width: 600px) {
-            body {
-                padding: 30px 20px;
-            }
-            h1 {
-                font-size: 18px; 
-            }
+            body { padding: 30px 20px; }
+            h1 { font-size: 18px; }
         }
     </style>
 </head>
 <body>
-
     <main>
-        <!-- HEADER / NAME -->
         <h1>Surya Maddula</h1>
+        
+        <!-- Social Links -->
+        <div class="socials">
+            <a href="https://github.com/Surya893">GitHub</a>
+            <a href="https://twitter.com/suryamaddula_">Twitter</a>
+            <a href="https://linkedin.com/in/suryaseshamaddula">LinkedIn</a>
+            <a href="mailto:your@email.com">Email</a>
+        </div>
 
-<div style="margin: 20px 0; font-size: 16px;">
-    <a href="https://github.com/Surya893" style="margin-right: 20px;">GitHub</a>
-    <a href="https://twitter.com/suryamaddula_" style="margin-right: 20px;">Twitter</a>
-    <a href="https://linkedin.com/in/suryaseshamaddula" style="margin-right: 20px;">LinkedIn</a>
-    <a href="mailto:">Email</a>
-</div>
-
-        <!-- BIO CONTENT -->
-        <p>
-            I’m a founder, inventor, developer, & high school student.
-        </p>
-
-        <p>
-            I'm currently building <a href="https://whisperwave.in" target="_blank">Whisperwave</a>, where we're developing Active Noise Cancellation for Open, Uncontrolled Environments — the kind every current ANC systems quietly avoid.
-        </p>
-
-        <p>
-            I've been building in tech & product since I was 12, consulted for MNCs like CIBC, Amazon Alexa, Shell, worked on Moonshots and developed ML Algorithms. Got my first granted patent at the age of 15 years and 10 months.
-        </p>
-
-        <p>
-            Before this, I was training and researching LLMs under Prof. Alejandro from Columbia University. I'm also the youngest resident ever at Lossfunk, where i was building resilient cloud-native software and infrastructure for Whisperwave.
-        </p>
-        <p>
-            
+        <!-- Bio -->
+        <p>I’m a founder, inventor, developer, & high school student.</p>
+        <p>I'm currently building <a href="https://whisperwave.in" target="_blank">Whisperwave</a>, where we're developing Active Noise Cancellation for Open, Uncontrolled Environments — the kind every current ANC systems quietly avoid.</p>
+        <p>I've been building in tech & product since I was 12, consulted for MNCs like CIBC, Amazon Alexa, Shell, worked on Moonshots and developed ML Algorithms. Got my first granted patent at the age of 15 years and 10 months.</p>
+        <p>Before this, I was training and researching LLMs under Prof. Alejandro from Columbia University. I'm also the youngest resident ever at Lossfunk, where i was building resilient cloud-native software and infrastructure for Whisperwave.</p>
     </main>
-
 </body>
 </html>
