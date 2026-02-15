@@ -18,7 +18,7 @@ const CloseSection = () => {
     <footer id="close" ref={ref} className="py-20 md:py-32 px-6 z-10 relative">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="reveal text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground tracking-tight leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-          Built for long-term alignment.
+          Long-term alignment.
         </h2>
 
         <a
