@@ -13,7 +13,7 @@ const CloseSection = () => {
   const ref = useScrollReveal();
 
   return (
-    <footer ref={ref} className="py-24 md:py-40 px-6 z-10 relative">
+    <footer id="close" ref={ref} className="py-20 md:py-32 px-6 z-10 relative">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="reveal text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground tracking-tight leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           Built for long-term alignment.
@@ -21,14 +21,14 @@ const CloseSection = () => {
 
         <a
           href="mailto:me@suryamaddula.com"
-          className="reveal reveal-delay-2 inline-block mt-10 text-base text-muted-foreground hover:text-foreground transition-colors tracking-wide group"
+          className="reveal reveal-delay-2 inline-block mt-8 text-base text-muted-foreground hover:text-foreground transition-colors tracking-wide group"
         >
           <span className="border-b border-muted-foreground/30 group-hover:border-foreground/50 pb-0.5 transition-colors">
             me@suryamaddula.com
           </span>
         </a>
 
-        <div className="reveal reveal-delay-3 flex items-center justify-center gap-5 mt-10">
+        <div className="reveal reveal-delay-3 flex items-center justify-center gap-5 mt-8">
           {socials.map((s) => (
             <a
               key={s.label}
@@ -43,7 +43,7 @@ const CloseSection = () => {
           ))}
         </div>
 
-        <p className="reveal reveal-delay-4 mt-16 text-xs text-muted-foreground/30 tracking-wide">
+        <p className="reveal reveal-delay-4 mt-12 text-xs text-muted-foreground/30 tracking-wide">
           Building deliberately. Access is selective.
         </p>
       </div>

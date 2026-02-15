@@ -6,6 +6,7 @@ const HeroSection = () => {
 
   return (
     <section
+      id="hero"
       ref={ref}
       className="relative min-h-screen flex flex-col items-center justify-center px-6 z-10"
     >

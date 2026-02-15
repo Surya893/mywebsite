@@ -14,13 +14,16 @@ const OrbitSection = () => {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section ref={ref} className="relative py-32 md:py-48 px-6 z-10">
+    <section id="orbit" ref={ref} className="relative py-20 md:py-32 px-6 z-10">
       <div className="max-w-4xl mx-auto">
-        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+        <p className="reveal text-xs tracking-[0.25em] uppercase text-muted-foreground/50 font-medium text-center mb-10">
+          Focus Areas
+        </p>
+        <div className="flex flex-wrap justify-center gap-4 md:gap-5">
           {nodes.map((node, i) => (
             <div
               key={node.label}
-              className={`reveal reveal-delay-${i + 1} orbit-node relative group cursor-default`}
+              className={`reveal reveal-delay-${Math.min(i + 1, 5)} orbit-node relative group cursor-default`}
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
             >
@@ -29,9 +32,8 @@ const OrbitSection = () => {
                   {node.label}
                 </span>
               </div>
-              {/* Tooltip */}
               <div
-                className={`absolute left-1/2 -translate-x-1/2 top-full mt-3 px-4 py-2.5 rounded-lg bg-card border border-border shadow-lg max-w-[240px] text-center transition-all duration-300 pointer-events-none ${
+                className={`absolute left-1/2 -translate-x-1/2 top-full mt-3 px-4 py-2.5 rounded-lg bg-card border border-border shadow-lg max-w-[240px] text-center transition-all duration-300 pointer-events-none z-20 ${
                   hovered === i ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"
                 }`}
               >
