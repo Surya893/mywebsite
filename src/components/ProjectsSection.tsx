@@ -80,7 +80,7 @@ const ProjectsSection = () => {
     <section id="projects" ref={ref} className="py-20 md:py-32 px-6 z-10 relative">
       <div className="max-w-3xl mx-auto">
         <p className="reveal text-xs tracking-[0.25em] uppercase text-muted-foreground/50 font-medium text-center mb-10">
-          Selected Work
+          My Work
         </p>
         <div className="space-y-3">
           {projects.map((p, i) => (
