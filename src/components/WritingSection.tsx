@@ -15,7 +15,7 @@ const WritingSection = () => {
     <section id="writing" ref={ref} className="py-20 md:py-32 px-6 z-10 relative">
       <div className="max-w-2xl mx-auto">
         <p className="reveal text-xs tracking-[0.25em] uppercase text-muted-foreground/50 font-medium text-center mb-10">
-          Writing
+          Surya's Sonnets
         </p>
         <div className="space-y-1">
           {fragments.map((f, i) => (
