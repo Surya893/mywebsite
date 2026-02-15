@@ -22,12 +22,6 @@ const projects = [
     detail: "Developed a machine learning product recommendation model and published related links and resources on GitHub for community use.",
   },
   {
-    title: "Patent in AI",
-    desc: "Filed and published first patent in AI at the age of 15.",
-    tag: "Patent",
-    detail: "Filed and got published on a first patent in AI at the age of 15, covering a noise cancellation system and a method to operate the same in the field of electronics.",
-  },
-  {
     title: "HDR Using ML",
     desc: "ML model that predicts handwritten numbers and converts them to keyboard versions.",
     tag: "ML",
