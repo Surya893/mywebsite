@@ -10,7 +10,10 @@ const HeroSection = () => {
       className="relative min-h-screen flex flex-col items-center justify-center px-6 z-10"
     >
       <div className="max-w-3xl text-center">
-        <h1 className="reveal text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-foreground leading-[1.1]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+        <p className="reveal text-sm sm:text-base tracking-[0.3em] uppercase text-muted-foreground/60 font-medium mb-8">
+          Surya Maddula
+        </p>
+        <h1 className="reveal reveal-delay-1 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-foreground leading-[1.1]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           Building physical-world intelligence infrastructure.
         </h1>
         <p className="reveal reveal-delay-2 mt-6 text-base sm:text-lg text-muted-foreground tracking-wide font-light">
