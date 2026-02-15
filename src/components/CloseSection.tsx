@@ -1,10 +1,10 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const socials = [
-  { label: "LinkedIn", url: "https://linkedin.com/in/suryamaddula", icon: "Li" },
-  { label: "X", url: "https://x.com/suryamaddula", icon: "X" },
-  { label: "Instagram", url: "https://instagram.com/suryamaddula", icon: "Ig" },
-  { label: "Medium", url: "https://medium.com/@suryamaddula", icon: "Md" },
+  { label: "LinkedIn", url: "https://linkedin.com/in/suryaseshamaddula", icon: "Li" },
+  { label: "X", url: "https://x.com/suryamaddula_", icon: "X" },
+  { label: "GitHub", url: "https://github.com/suryamaddula", icon: "Gh" },
+  { label: "Medium", url: "https://suryamaddula.medium.com", icon: "Md" },
   { label: "Substack", url: "https://suryamaddula.substack.com", icon: "Ss" },
   { label: "Patents", url: "https://patents.google.com/?inventor=surya+maddula", icon: "Pt" },
 ];

@@ -2,6 +2,7 @@ import { useTheme } from "@/hooks/useTheme";
 import AmbientCanvas from "@/components/AmbientCanvas";
 import ScrollProgress from "@/components/ScrollProgress";
 import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
 import OrbitSection from "@/components/OrbitSection";
 import PhilosophyInterjection from "@/components/PhilosophyInterjection";
 import ProjectsSection from "@/components/ProjectsSection";
@@ -11,7 +12,7 @@ import BuildingNowSection from "@/components/BuildingNowSection";
 import CloseSection from "@/components/CloseSection";
 
 const Index = () => {
-  useTheme(); // ensures light mode
+  useTheme();
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
@@ -20,6 +21,7 @@ const Index = () => {
 
       <main>
         <HeroSection />
+        <AboutSection />
         <OrbitSection />
         <PhilosophyInterjection text="Infrastructure compounds." />
         <ProjectsSection />

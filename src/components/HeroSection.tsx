@@ -16,8 +16,8 @@ const HeroSection = () => {
         <h1 className="reveal reveal-delay-1 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-foreground leading-[1.1]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           Building physical-world intelligence infrastructure.
         </h1>
-        <p className="reveal reveal-delay-2 mt-6 text-base sm:text-lg text-muted-foreground tracking-wide font-light">
-          Built across hardware, ML, and distributed systems.
+        <p className="reveal reveal-delay-2 mt-6 text-base sm:text-lg text-muted-foreground tracking-wide font-light max-w-xl mx-auto">
+          18 · Founder of WhisperWave · 1x Patent · LLMs @ Columbia · Backed by Emergent Ventures & 1517 Fund
         </p>
       </div>
       <div className="absolute bottom-12 breathe">
