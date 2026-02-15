@@ -8,7 +8,7 @@ const AboutSection = () => {
       <div className="max-w-2xl mx-auto">
         <p className="reveal text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
           I'm Surya — an 18-year-old systems builder working at the intersection of hardware, machine learning, and distributed infrastructure. I founded{" "}
-          <span className="text-foreground font-medium">WhisperWave</span>, an open-environment acoustic control company backed by{" "}
+          <span className="text-foreground font-medium">Whisperwave</span>, an open-environment acoustic control company backed by{" "}
           <span className="text-foreground font-medium">Microsoft</span>,{" "}
           <span className="text-foreground font-medium">Emergent Ventures</span>, and{" "}
           <span className="text-foreground font-medium">1517 Fund</span>.
