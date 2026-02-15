@@ -4,7 +4,7 @@ const AboutSection = () => {
   const ref = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 md:py-36 px-6 z-10 relative">
+    <section id="about" ref={ref} className="py-20 md:py-28 px-6 z-10 relative">
       <div className="max-w-2xl mx-auto">
         <p className="reveal text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
           I'm Surya — an 18-year-old systems builder working at the intersection of hardware, machine learning, and distributed infrastructure. I founded{" "}

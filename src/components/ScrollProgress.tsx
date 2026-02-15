@@ -1,37 +1,57 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
-const sections = [
-  "hero", "orbit", "work", "writing", "now", "close"
+const sectionIds = [
+  "hero", "about", "orbit", "projects", "writing", "now", "close"
 ];
 
 const ScrollProgress = () => {
   const [active, setActive] = useState(0);
 
-  useEffect(() => {
-    const onScroll = () => {
-      const scrollY = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = docHeight > 0 ? scrollY / docHeight : 0;
-      setActive(Math.min(sections.length - 1, Math.floor(progress * sections.length)));
-    };
+  const onScroll = useCallback(() => {
+    const viewportMiddle = window.scrollY + window.innerHeight * 0.4;
+    let closest = 0;
+    let closestDist = Infinity;
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    sectionIds.forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const elTop = rect.top + window.scrollY;
+      const dist = Math.abs(elTop - viewportMiddle);
+      if (dist < closestDist) {
+        closestDist = dist;
+        closest = i;
+      }
+    });
+
+    setActive(closest);
   }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [onScroll]);
+
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <nav
-      className="fixed right-6 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-3 hidden md:flex"
+      className="fixed right-6 top-1/2 -translate-y-1/2 z-40 md:flex flex-col gap-3 hidden"
       aria-label="Scroll progress"
     >
-      {sections.map((_, i) => (
-        <div
-          key={i}
-          className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${
+      {sectionIds.map((id, i) => (
+        <button
+          key={id}
+          onClick={() => scrollTo(id)}
+          className={`w-1.5 h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
             i === active
               ? "bg-foreground scale-150"
-              : "bg-muted-foreground/30"
+              : "bg-muted-foreground/30 hover:bg-muted-foreground/60"
           }`}
+          aria-label={`Scroll to ${id}`}
         />
       ))}
     </nav>

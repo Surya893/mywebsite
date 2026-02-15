@@ -12,24 +12,29 @@ const WritingSection = () => {
   const ref = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 md:py-40 px-6 z-10 relative">
-      <div className="max-w-2xl mx-auto space-y-6">
-        {fragments.map((f, i) => (
-          <a
-            key={i}
-            href={f.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`reveal reveal-delay-${Math.min(i + 1, 5)} block group`}
-          >
-            <div className="flex items-center justify-between gap-4 py-4 border-b border-border/30 transition-colors group-hover:border-foreground/20">
-              <p className="text-base md:text-lg text-muted-foreground group-hover:text-foreground transition-colors font-light italic leading-relaxed">
-                {f.text}
-              </p>
-              <ArrowUpRight className="w-4 h-4 text-muted-foreground/30 group-hover:text-foreground/60 transition-all shrink-0" />
-            </div>
-          </a>
-        ))}
+    <section id="writing" ref={ref} className="py-20 md:py-32 px-6 z-10 relative">
+      <div className="max-w-2xl mx-auto">
+        <p className="reveal text-xs tracking-[0.25em] uppercase text-muted-foreground/50 font-medium text-center mb-10">
+          Writing
+        </p>
+        <div className="space-y-1">
+          {fragments.map((f, i) => (
+            <a
+              key={i}
+              href={f.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`reveal reveal-delay-${Math.min(i + 1, 5)} block group`}
+            >
+              <div className="flex items-center justify-between gap-4 py-4 border-b border-border/30 transition-colors group-hover:border-foreground/20">
+                <p className="text-base md:text-lg text-muted-foreground group-hover:text-foreground transition-colors font-light italic leading-relaxed">
+                  {f.text}
+                </p>
+                <ArrowUpRight className="w-4 h-4 text-muted-foreground/30 group-hover:text-foreground/60 transition-all shrink-0" />
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );
