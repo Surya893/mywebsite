@@ -11,6 +11,8 @@ import BuildingNowSection from "@/components/BuildingNowSection";
 import CloseSection from "@/components/CloseSection";
 
 const Index = () => {
+  useTheme(); // ensures light mode
+
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       <AmbientCanvas />
