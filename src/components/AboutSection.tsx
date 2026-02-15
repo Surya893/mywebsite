@@ -25,7 +25,7 @@ const AboutSection = () => {
           <span className="text-foreground font-medium">TKS</span>.
         </p>
         <p className="reveal reveal-delay-2 mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
-          Everything I build points toward one thesis: intelligence infrastructure that operates in the physical world — not just in software.
+          Everything I build points toward one thesis: intelligence infrastructure that operates in the physical world and not just in software.
         </p>
       </div>
     </section>
