@@ -4,16 +4,16 @@ import { X } from "lucide-react";
 
 const projects = [
   {
-    title: "Digital MRV",
-    desc: "Satellite-to-soil verification system for carbon restoration.",
-    tag: "Shell",
-    detail: "Built a measurement, reporting, and verification system that connects satellite imagery to ground-truth soil data, enabling transparent carbon credit validation at scale.",
-  },
-  {
     title: "Open Air ANC",
     desc: "Open-environment noise cancellation system. Filed patent.",
     tag: "Patent",
     detail: "Designed and prototyped an active noise cancellation system that operates in open environments — where traditional ANC fails. Patent filed for the core acoustic control architecture.",
+  },
+  {
+    title: "Digital MRV",
+    desc: "Satellite-to-soil verification system for carbon restoration.",
+    tag: "Shell",
+    detail: "Built a measurement, reporting, and verification system that connects satellite imagery to ground-truth soil data, enabling transparent carbon credit validation at scale.",
   },
   {
     title: "Ecoligna",
