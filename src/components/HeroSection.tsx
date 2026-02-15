@@ -18,7 +18,7 @@ const HeroSection = () => {
           Building physical-world intelligence infrastructure.
         </h1>
         <p className="reveal reveal-delay-2 mt-6 text-base sm:text-lg text-muted-foreground tracking-wide font-light max-w-xl mx-auto">
-          18 · Founder of WhisperWave · 1x Patent · LLMs @ Columbia · Backed by Emergent Ventures & 1517 Fund
+          18 · Founder of Whisperwave · 1x Patent · LLMs @ Columbia · Backed by Emergent Ventures & 1517 Fund
         </p>
       </div>
       <div className="absolute bottom-12 breathe">

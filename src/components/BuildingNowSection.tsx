@@ -1,7 +1,7 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const signals = [
-  { label: "Now", text: "Building open-environment acoustic control infrastructure at WhisperWave." },
+  { label: "Now", text: "Building open-environment acoustic control infrastructure at Whisperwave." },
   { label: null, text: "Targeting industrial and transit environments." },
   { label: null, text: "Designing v2 system architecture." },
   { label: null, text: "Researching LLMs at Columbia." },
