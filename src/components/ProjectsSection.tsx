@@ -10,6 +10,30 @@ const projects = [
     detail: "Designed and prototyped an active noise cancellation system that operates in open environments — where traditional ANC fails. Patent filed for the core acoustic control architecture.",
   },
   {
+    title: "ANC w/ Matplotlib",
+    desc: "Designed the software for an ANC system using AI and Matplotlib.",
+    tag: "Software",
+    detail: "Built the software layer for an active noise cancellation system, leveraging AI for signal processing and Matplotlib for real-time acoustic visualization and analysis.",
+  },
+  {
+    title: "Product Recommendation using ML",
+    desc: "ML-powered product recommendation model with open-source resources.",
+    tag: "ML",
+    detail: "Developed a machine learning product recommendation model and published related links and resources on GitHub for community use.",
+  },
+  {
+    title: "Patent in AI",
+    desc: "Filed and published first patent in AI at the age of 15.",
+    tag: "Patent",
+    detail: "Filed and got published on a first patent in AI at the age of 15, covering a noise cancellation system and a method to operate the same in the field of electronics.",
+  },
+  {
+    title: "HDR Using ML",
+    desc: "ML model that predicts handwritten numbers and converts them to keyboard versions.",
+    tag: "ML",
+    detail: "Built a machine learning model that predicts the value of handwritten numbers and converts them into their respective keyboard versions using deep learning techniques.",
+  },
+  {
     title: "Digital MRV",
     desc: "Satellite-to-soil verification system for carbon restoration.",
     tag: "Shell",
