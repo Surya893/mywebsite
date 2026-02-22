@@ -17,6 +17,17 @@ const Index = () => {
         <p>
           research at <strong>columbia</strong>. advising at <strong>evm capital</strong>. resident at <strong>lossfunk</strong>. previously <strong>amazon</strong>, <strong>shell</strong>, <strong>cibc</strong>.
         </p>
+
+        <h3 style={{ fontSize: 18, marginTop: 24, marginBottom: 10, color: "#666" }}>the timeline</h3>
+        <ul style={{ paddingLeft: 20 }}>
+          <li style={{ marginBottom: 8 }}>started self-learning technical skills at <strong>age 13</strong>. got certified with <strong>70+ certifications</strong>.</li>
+          <li style={{ marginBottom: 8 }}>first remote job as a <strong>data scientist & developer</strong> at <strong>age 14</strong> via discord.</li>
+          <li style={{ marginBottom: 8 }}>consulted for mncs like <strong>cibc</strong>, <strong>shell</strong> & <strong>amazon</strong> at <strong>age 15</strong>.</li>
+          <li style={{ marginBottom: 8 }}>worked on <strong>llms</strong> with <strong>columbia university</strong>. got a granted patent in india (& wipo) at <strong>age 16</strong>.</li>
+          <li style={{ marginBottom: 8 }}>raised <strong>$45k</strong> & dropped out of uoft at <strong>age 17</strong> to build full-time.</li>
+          <li style={{ marginBottom: 8 }}>got into <strong>iim b</strong> & partnered with india's <strong>best hardware lab</strong> at <strong>age 18</strong>.</li>
+        </ul>
+
         <p style={{ fontStyle: "italic", color: "#444", marginTop: 20 }}>
           intelligence infrastructure that operates in the physical world — not just in software.
         </p>
