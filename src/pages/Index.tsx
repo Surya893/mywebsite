@@ -73,7 +73,7 @@ const Index = () => {
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
 
       <section style={{ marginBottom: 50 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 16 }}>Surya's Sonnets</h2>
+        <h2 style={{ fontSize: 22, marginBottom: 16 }}><a href="https://suryamaddula.substack.com/">Surya's Sonnets</a></h2>
         <blockquote>"The best infrastructure is invisible until it fails."</blockquote>
         <blockquote>"Conviction is a signal. Doubt is a feature."</blockquote>
         <blockquote>"Systems outlast strategies."</blockquote>
