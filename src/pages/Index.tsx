@@ -18,7 +18,7 @@ const Index = () => {
           research at <strong>columbia</strong>. advising at <strong>evm capital</strong>. resident at <strong>lossfunk</strong>. previously <strong>amazon</strong>, <strong>shell</strong>, <strong>cibc</strong>.
         </p>
 
-        <h3 style={{ fontSize: 18, marginTop: 24, marginBottom: 10, color: "#666" }}>the timeline</h3>
+        <h3 style={{ fontSize: 18, marginTop: 24, marginBottom: 10, color: "#666" }}>my journey</h3>
         <ul style={{ paddingLeft: 20 }}>
           <li style={{ marginBottom: 8 }}>started self-learning technical skills at <strong>age 13</strong>. got certified with <strong>70+ certifications</strong>.</li>
           <li style={{ marginBottom: 8 }}>first remote job as a <strong>data scientist & developer</strong> at <strong>age 14</strong> via discord.</li>
