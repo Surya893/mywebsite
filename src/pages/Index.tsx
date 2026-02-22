@@ -110,7 +110,7 @@ const Index = () => {
           <a href="https://x.com/suryamaddula_">X</a> · {" "}
           <a href="https://www.instagram.com/suryamaddula_/">Instagram</a>
         </p>
-        <p style={{ fontSize: 13, color: "#999", marginTop: 24 }}>Building deliberately. Access is selective.</p>
+        <p style={{ fontSize: 13, color: "#999", marginTop: 24 }}>Building deliberately.</p>
       </footer>
     </main>
   );
