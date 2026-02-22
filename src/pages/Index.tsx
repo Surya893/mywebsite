@@ -83,6 +83,18 @@ const Index = () => {
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
 
       <section style={{ marginBottom: 50 }}>
+        <h2 style={{ fontSize: 22, marginBottom: 12 }}>What I love</h2>
+        <p>
+          Swimming, basketball, billiards, working out, and running.
+        </p>
+        <p>
+          I also love to write — both my <a href="https://suryamaddula.substack.com/">newsletter</a> and my <a href="https://suryamaddula.medium.com">articles on AI and tech</a>.
+        </p>
+      </section>
+
+      <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
+
+      <section style={{ marginBottom: 50 }}>
         <h2 style={{ fontSize: 22, marginBottom: 12 }}>What I'm building now</h2>
         <ul style={{ paddingLeft: 20 }}>
           <li style={{ marginBottom: 8 }}>Building open-environment acoustic control infrastructure at <strong><a href="https://whisperwave.in/">Whisperwave</a></strong>.</li>
