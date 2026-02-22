@@ -52,6 +52,21 @@ const Index = () => {
             <strong>ecoligna</strong><br />
             transparent wood replacing glass. 70% energy reduction. tks moonshot.
           </li>
+        </ul>
+
+        <h3 style={{ fontSize: 18, marginTop: 30, marginBottom: 10, color: "#666" }}>experiments</h3>
+        <ul style={{ paddingLeft: 20 }}>
+          <li style={{ marginBottom: 10 }}><strong>anc w/ matplotlib</strong> — software layer for anc using ai and matplotlib visualization.</li>
+          <li style={{ marginBottom: 10 }}><strong>product recommendation using ml</strong> — ml-powered recommendation model.</li>
+          <li style={{ marginBottom: 10 }}><strong>hdr using ml</strong> — ml model that predicts handwritten numbers.</li>
+        </ul>
+      </section>
+
+      <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
+
+      <section style={{ marginBottom: 50 }}>
+        <h2 style={{ fontSize: 22, marginBottom: 12 }}>consulting</h2>
+        <ul style={{ paddingLeft: 20 }}>
           <li style={{ marginBottom: 12 }}>
             <strong>future of alexa</strong><br />
             gen z product strategy for amazon's voice platform.
@@ -60,13 +75,10 @@ const Index = () => {
             <strong>future of banking</strong><br />
             redesigned cibc for a generation that won't visit branches.
           </li>
-        </ul>
-
-        <h3 style={{ fontSize: 18, marginTop: 30, marginBottom: 10, color: "#666" }}>experiments</h3>
-        <ul style={{ paddingLeft: 20 }}>
-          <li style={{ marginBottom: 10 }}><strong>anc w/ matplotlib</strong> — software layer for anc using ai and matplotlib visualization.</li>
-          <li style={{ marginBottom: 10 }}><strong>product recommendation using ml</strong> — ml-powered recommendation model.</li>
-          <li style={{ marginBottom: 10 }}><strong>hdr using ml</strong> — ml model that predicts handwritten numbers.</li>
+          <li style={{ marginBottom: 12 }}>
+            <strong>digital mrv innovations in east africa</strong><br />
+            satellite-to-soil verification system for carbon restoration. built at shell.
+          </li>
         </ul>
       </section>
 
