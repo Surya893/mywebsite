@@ -2,20 +2,28 @@ import suryaPhoto from "@/assets/surya.jpg";
 import { useState, useEffect, useRef, useCallback } from "react";
 
 const Index = () => {
-  // Initialize based on current scroll position to prevent flash on refresh
-  const [scrolled, setScrolled] = useState(() => typeof window !== "undefined" && window.scrollY > 100);
+  const [scrolled, setScrolled] = useState(() => typeof window !== "undefined" && window.scrollY > 200);
   const [expanded, setExpanded] = useState(false);
-  const sentinelRef = useRef<HTMLDivElement>(null);
+  const photoRef = useRef<HTMLDivElement>(null);
 
+  // Use scroll listener with hysteresis to prevent flickering
   useEffect(() => {
-    const sentinel = sentinelRef.current;
-    if (!sentinel) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setScrolled(!entry.isIntersecting),
-      { threshold: 0.5 }
-    );
-    observer.observe(sentinel);
-    return () => observer.disconnect();
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          const photoBottom = photoRef.current
+            ? photoRef.current.getBoundingClientRect().bottom
+            : 0;
+          setScrolled(photoBottom < -20);
+          ticking = false;
+        });
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const toggleExpand = useCallback(() => {
@@ -26,78 +34,86 @@ const Index = () => {
     if (!scrolled) setExpanded(false);
   }, [scrolled]);
 
+  // Lock body scroll when expanded
+  useEffect(() => {
+    if (expanded) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [expanded]);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setExpanded(false); };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  const extLink = { target: "_blank" as const, rel: "noopener noreferrer" };
+
   return (
     <main style={{ maxWidth: 680, margin: "0 auto", padding: "60px 24px 80px", fontFamily: "Georgia, 'Times New Roman', serif", lineHeight: 1.8, color: "#333" }}>
 
       {/* Expanded overlay */}
-      {expanded && (
-        <div
-          onClick={() => setExpanded(false)}
-          style={{
-            position: "fixed",
-            inset: 0,
-            background: "rgba(0,0,0,0.6)",
-            backdropFilter: "blur(8px)",
-            WebkitBackdropFilter: "blur(8px)",
-            zIndex: 199,
-            animation: "fadeIn 0.3s ease",
-          }}
-        />
-      )}
+      <div
+        onClick={() => setExpanded(false)}
+        style={{
+          position: "fixed",
+          inset: 0,
+          background: "rgba(0,0,0,0.6)",
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
+          zIndex: 199,
+          opacity: expanded ? 1 : 0,
+          pointerEvents: expanded ? "auto" : "none",
+          transition: "opacity 0.3s ease",
+        }}
+      />
 
-      {/* Sentinel for intersection observer - always in DOM */}
-      <div ref={sentinelRef} style={{ height: 1, marginBottom: -1 }} />
-
-      {/* Inline photo - hidden when scrolled */}
-      {!scrolled && (
-        <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 8 }}>
-          <img
-            src={suryaPhoto}
-            alt="surya maddula"
-            style={{
-              width: 280,
-              boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
-              objectFit: "cover",
-              borderRadius: 16,
-            }}
-          />
-        </div>
-      )}
-
-      {scrolled && (
+      {/* Inline photo — always in DOM to prevent layout shift */}
+      <div ref={photoRef} style={{ display: "flex", justifyContent: "flex-end", marginBottom: 8 }}>
         <img
           src={suryaPhoto}
           alt="surya maddula"
-          onClick={toggleExpand}
           style={{
-            position: "fixed",
-            top: expanded ? "50%" : 20,
-            right: expanded ? "50%" : 20,
-            transform: expanded ? "translate(50%, -50%)" : "translate(0, 0)",
-            width: expanded ? "min(400px, 80vw)" : 128,
+            width: 280,
+            boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
             objectFit: "cover",
-            borderRadius: expanded ? 20 : 12,
-            boxShadow: expanded
-              ? "0 24px 80px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.15)"
-              : "0 2px 12px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08)",
-            cursor: "pointer",
-            transition: "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-            zIndex: 200,
+            borderRadius: 16,
+            opacity: scrolled ? 0 : 1,
+            transition: "opacity 0.4s ease",
           }}
         />
-      )}
+      </div>
+
+      {/* Floating photo — always rendered, animated via opacity + transform */}
+      <img
+        src={suryaPhoto}
+        alt="surya maddula"
+        onClick={toggleExpand}
+        style={{
+          position: "fixed",
+          top: expanded ? "50%" : 20,
+          right: expanded ? "50%" : 20,
+          transform: expanded ? "translate(50%, -50%)" : "translate(0, 0)",
+          width: expanded ? "min(400px, 80vw)" : 128,
+          objectFit: "cover",
+          borderRadius: expanded ? 20 : 12,
+          boxShadow: expanded
+            ? "0 24px 80px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.15)"
+            : "0 2px 12px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08)",
+          cursor: scrolled ? "pointer" : "default",
+          opacity: scrolled ? 1 : 0,
+          pointerEvents: scrolled ? "auto" : "none",
+          transition: "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+          zIndex: 200,
+        }}
+      />
 
       <header style={{ marginBottom: 60 }}>
-        <div>
-          <h1 style={{ fontSize: 36, marginBottom: 4 }}>surya maddula</h1>
-          <p style={{ fontSize: 18, color: "#555", marginTop: 0 }}>building physical-world intelligence infrastructure.</p>
-        </div>
+        <h1 style={{ fontSize: 36, marginBottom: 4 }}>surya maddula</h1>
+        <p style={{ fontSize: 18, color: "#555", marginTop: 0 }}>building physical-world intelligence infrastructure.</p>
       </header>
 
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
@@ -105,7 +121,7 @@ const Index = () => {
       <section style={{ marginBottom: 50 }}>
         <h2 style={{ fontSize: 22, marginBottom: 12 }}>who i am</h2>
         <p>
-          i'm 18. i founded <strong><a href="https://whisperwave.in/">whisperwave</a></strong> and patented an open-environment acoustic control system when i was 15. backed by <strong>emergent ventures</strong>, <strong>1517 fund</strong>, <strong>microsoft</strong>, <strong>aws</strong> and <strong>localhost</strong>.
+          i'm 18. i founded <strong><a href="https://whisperwave.in/" {...extLink}>whisperwave</a></strong> and patented an open-environment acoustic control system when i was 15. backed by <strong>emergent ventures</strong>, <strong>1517 fund</strong>, <strong>microsoft</strong>, <strong>aws</strong> and <strong>localhost</strong>.
         </p>
         <p>
           research at <strong>columbia</strong>. advising at <strong>evm capital</strong>. resident at <strong>lossfunk</strong>. previously <strong>amazon</strong>, <strong>shell</strong>, <strong>cibc</strong>.
@@ -189,7 +205,7 @@ const Index = () => {
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
 
       <section style={{ marginBottom: 50 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 16 }}><a href="https://suryamaddula.substack.com/">surya's sonnets</a></h2>
+        <h2 style={{ fontSize: 22, marginBottom: 16 }}><a href="https://suryamaddula.substack.com/" {...extLink}>surya's sonnets</a></h2>
         <blockquote>"the best infrastructure is invisible until it fails."</blockquote>
         <blockquote>"conviction is a signal. doubt is a feature."</blockquote>
         <blockquote>"systems outlast strategies."</blockquote>
@@ -204,7 +220,7 @@ const Index = () => {
           swimming, basketball, billiards, working out, and running.
         </p>
         <p>
-          i also love to write — both my <a href="https://suryamaddula.substack.com/">newsletter</a> and my <a href="https://suryamaddula.medium.com">articles on ai and tech</a>.
+          i also love to write — both my <a href="https://suryamaddula.substack.com/" {...extLink}>newsletter</a> and my <a href="https://suryamaddula.medium.com" {...extLink}>articles on ai and tech</a>.
         </p>
       </section>
 
@@ -213,10 +229,9 @@ const Index = () => {
       <section style={{ marginBottom: 50 }}>
         <h2 style={{ fontSize: 22, marginBottom: 12 }}>what i'm building now</h2>
         <ul style={{ paddingLeft: 20 }}>
-          <li style={{ marginBottom: 8 }}>building open-environment acoustic control infrastructure at <strong><a href="https://whisperwave.in/">whisperwave</a></strong>.</li>
+          <li style={{ marginBottom: 8 }}>building open-environment acoustic control infrastructure at <strong><a href="https://whisperwave.in/" {...extLink}>whisperwave</a></strong>.</li>
           <li style={{ marginBottom: 8 }}>targeting industrial and transit environments.</li>
           <li style={{ marginBottom: 8 }}>designing v2 system architecture.</li>
-          
           <li style={{ marginBottom: 8 }}>advising at <strong>evm capital</strong>.</li>
         </ul>
       </section>
@@ -229,13 +244,13 @@ const Index = () => {
           <a href="mailto:me@suryamaddula.com">me@suryamaddula.com</a>
         </p>
         <p style={{ fontSize: 15 }}>
-          <a href="https://github.com/Surya893">github</a> · {" "}
-          <a href="https://suryamaddula.medium.com">medium</a> · {" "}
-          <a href="https://suryamaddula.substack.com">substack</a> · {" "}
-          <a href="https://patents.google.com/patent/WO2024176209A2/en?q=(surya+maddula)&oq=surya+maddula">patents</a> · {" "}
-          <a href="https://linkedin.com/in/suryaseshamaddula">linkedin</a> · {" "}
-          <a href="https://x.com/suryamaddula_">x</a> · {" "}
-          <a href="https://www.instagram.com/suryamaddula_/">instagram</a>
+          <a href="https://github.com/Surya893" {...extLink}>github</a> · {" "}
+          <a href="https://suryamaddula.medium.com" {...extLink}>medium</a> · {" "}
+          <a href="https://suryamaddula.substack.com" {...extLink}>substack</a> · {" "}
+          <a href="https://patents.google.com/patent/WO2024176209A2/en?q=(surya+maddula)&oq=surya+maddula" {...extLink}>patents</a> · {" "}
+          <a href="https://linkedin.com/in/suryaseshamaddula" {...extLink}>linkedin</a> · {" "}
+          <a href="https://x.com/suryamaddula_" {...extLink}>x</a> · {" "}
+          <a href="https://www.instagram.com/suryamaddula_/" {...extLink}>instagram</a>
         </p>
         <p style={{ fontSize: 13, color: "#999", marginTop: 24 }}>building deliberately.</p>
         <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
