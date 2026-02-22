@@ -12,7 +12,7 @@ const Index = () => {
       <section style={{ marginBottom: 50 }}>
         <h2 style={{ fontSize: 22, marginBottom: 12 }}>Who I am</h2>
         <p>
-          I'm 18. I founded <strong><a href="https://whisperwave.in/">Whisperwave</a></strong> and patented an open-environment acoustic control system when I was 15. Backed by <strong>Emergent Ventures</strong>, <strong>1517 Fund</strong>, <strong>Microsoft</strong>, and <strong>AWS</strong>.
+          I'm 18. I founded <strong><a href="https://whisperwave.in/">Whisperwave</a></strong> and patented an open-environment acoustic control system when I was 15. Backed by <strong>Emergent Ventures</strong>, <strong>1517 Fund</strong>, <strong>Microsoft</strong>, <strong>AWS</strong> and <strong>LocalHost</strong>.
         </p>
         <p>
           Research at <strong>Columbia</strong>. Advising at <strong>EVM Capital</strong>. Resident at <strong>Lossfunk</strong>. Previously <strong>Amazon</strong>, <strong>Shell</strong>, <strong>CIBC</strong>.
