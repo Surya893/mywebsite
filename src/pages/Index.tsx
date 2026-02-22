@@ -69,7 +69,7 @@ const Index = () => {
         <ul style={{ paddingLeft: 20 }}>
           <li style={{ marginBottom: 12 }}>
             <strong>future of alexa</strong><br />
-            gen z product strategy for amazon's voice platform.
+            improving the productivity of remote workers through alexa.
           </li>
           <li style={{ marginBottom: 12 }}>
             <strong>future of banking</strong><br />
