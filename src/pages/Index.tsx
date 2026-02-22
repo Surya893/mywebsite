@@ -9,7 +9,7 @@ const Index = () => {
           <h1 style={{ fontSize: 36, marginBottom: 4 }}>surya maddula</h1>
           <p style={{ fontSize: 18, color: "#555", marginTop: 0 }}>building physical-world intelligence infrastructure.</p>
         </div>
-        <img src={suryaPhoto} alt="surya maddula" style={{ width: 200, objectFit: "cover", flexShrink: 0 }} />
+        <img src={suryaPhoto} alt="surya maddula" style={{ width: 200, objectFit: "cover", flexShrink: 0, borderRadius: "25%" }} />
       </header>
 
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
