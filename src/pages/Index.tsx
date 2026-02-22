@@ -123,7 +123,7 @@ const Index = () => {
           <li style={{ marginBottom: 8 }}>building open-environment acoustic control infrastructure at <strong><a href="https://whisperwave.in/">whisperwave</a></strong>.</li>
           <li style={{ marginBottom: 8 }}>targeting industrial and transit environments.</li>
           <li style={{ marginBottom: 8 }}>designing v2 system architecture.</li>
-          <li style={{ marginBottom: 8 }}>researching llms at <strong>columbia</strong>.</li>
+          
           <li style={{ marginBottom: 8 }}>advising at <strong>evm capital</strong>.</li>
         </ul>
       </section>
