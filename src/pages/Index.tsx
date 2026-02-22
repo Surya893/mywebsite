@@ -58,7 +58,7 @@ const Index = () => {
           src={suryaPhoto}
           alt="surya maddula"
           style={{
-            width: 200,
+            width: 280,
             objectFit: "cover",
             borderRadius: 16,
             transition: "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
