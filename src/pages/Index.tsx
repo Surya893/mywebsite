@@ -1,15 +1,41 @@
 import suryaPhoto from "@/assets/surya.jpg";
+import { useState, useEffect } from "react";
 
 const Index = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <main style={{ maxWidth: 680, margin: "0 auto", padding: "60px 24px 80px", fontFamily: "Georgia, 'Times New Roman', serif", lineHeight: 1.8, color: "#333" }}>
       
-      <header style={{ marginBottom: 60, display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 30 }}>
+      {/* Floating photo */}
+      <img
+        src={suryaPhoto}
+        alt="surya maddula"
+        style={{
+          position: scrolled ? "fixed" : "static",
+          top: scrolled ? 20 : undefined,
+          right: scrolled ? 20 : undefined,
+          width: scrolled ? 80 : 200,
+          objectFit: "cover",
+          flexShrink: 0,
+          borderRadius: 16,
+          boxShadow: scrolled ? "0 4px 20px rgba(0,0,0,0.15)" : "none",
+          transition: "width 0.3s ease, box-shadow 0.3s ease",
+          zIndex: 100,
+        }}
+      />
+
+      <header style={{ marginBottom: 60 }}>
         <div>
           <h1 style={{ fontSize: 36, marginBottom: 4 }}>surya maddula</h1>
           <p style={{ fontSize: 18, color: "#555", marginTop: 0 }}>building physical-world intelligence infrastructure.</p>
         </div>
-        <img src={suryaPhoto} alt="surya maddula" style={{ width: 200, objectFit: "cover", flexShrink: 0, borderRadius: 16 }} />
       </header>
 
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
