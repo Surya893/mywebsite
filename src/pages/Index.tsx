@@ -44,6 +44,13 @@ const Index = () => {
             <strong>open air anc</strong><br />
             open-environment noise cancellation system. filed patent. the core wedge.
           </li>
+          <li style={{ marginBottom: 10 }}><strong>anc w/ matplotlib</strong> — software layer for anc using ai and matplotlib visualization.</li>
+          <li style={{ marginBottom: 10 }}><strong>product recommendation using ml</strong> — ml-powered recommendation model.</li>
+          <li style={{ marginBottom: 10 }}><strong>hdr using ml</strong> — ml model that predicts handwritten numbers.</li>
+        </ul>
+
+        <h3 style={{ fontSize: 18, marginTop: 30, marginBottom: 10, color: "#666" }}>experiments</h3>
+        <ul style={{ paddingLeft: 20 }}>
           <li style={{ marginBottom: 12 }}>
             <strong>ecoligna</strong><br />
             transparent wood replacing glass. 70% energy reduction. tks moonshot.
@@ -52,13 +59,6 @@ const Index = () => {
             <strong>bcis for animal health</strong><br />
             use bcis to help alleviate/heal health problems in animals.
           </li>
-        </ul>
-
-        <h3 style={{ fontSize: 18, marginTop: 30, marginBottom: 10, color: "#666" }}>experiments</h3>
-        <ul style={{ paddingLeft: 20 }}>
-          <li style={{ marginBottom: 10 }}><strong>anc w/ matplotlib</strong> — software layer for anc using ai and matplotlib visualization.</li>
-          <li style={{ marginBottom: 10 }}><strong>product recommendation using ml</strong> — ml-powered recommendation model.</li>
-          <li style={{ marginBottom: 10 }}><strong>hdr using ml</strong> — ml model that predicts handwritten numbers.</li>
         </ul>
       </section>
 
