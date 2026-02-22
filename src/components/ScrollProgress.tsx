@@ -46,9 +46,9 @@ const ScrollProgress = () => {
         <button
           key={id}
           onClick={() => scrollTo(id)}
-          className={`w-1.5 h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
+          className={`w-2 h-2 rounded-full transition-all duration-500 cursor-pointer ${
             i === active
-              ? "bg-foreground scale-150"
+              ? "bg-foreground scale-150 shadow-[0_0_6px_hsl(var(--foreground)/0.3)]"
               : "bg-muted-foreground/30 hover:bg-muted-foreground/60"
           }`}
           aria-label={`Scroll to ${id}`}

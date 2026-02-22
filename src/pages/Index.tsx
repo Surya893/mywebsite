@@ -1,6 +1,7 @@
 import { useTheme } from "@/hooks/useTheme";
 import AmbientCanvas from "@/components/AmbientCanvas";
 import ScrollProgress from "@/components/ScrollProgress";
+import ThemeToggle from "@/components/ThemeToggle";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import OrbitSection from "@/components/OrbitSection";
@@ -12,12 +13,13 @@ import BuildingNowSection from "@/components/BuildingNowSection";
 import CloseSection from "@/components/CloseSection";
 
 const Index = () => {
-  useTheme();
+  const { dark, toggle } = useTheme();
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       <AmbientCanvas />
       <ScrollProgress />
+      <ThemeToggle dark={dark} toggle={toggle} />
 
       <main>
         <HeroSection />
