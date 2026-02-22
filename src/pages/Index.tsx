@@ -48,6 +48,10 @@ const Index = () => {
             <strong>ecoligna</strong><br />
             transparent wood replacing glass. 70% energy reduction. tks moonshot.
           </li>
+          <li style={{ marginBottom: 12 }}>
+            <strong>bcis for animal health</strong><br />
+            use bcis to help alleviate/heal health problems in animals.
+          </li>
         </ul>
 
         <h3 style={{ fontSize: 18, marginTop: 30, marginBottom: 10, color: "#666" }}>experiments</h3>
