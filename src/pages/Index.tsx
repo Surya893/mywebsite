@@ -3,126 +3,125 @@ const Index = () => {
     <main style={{ maxWidth: 680, margin: "0 auto", padding: "60px 24px 80px", fontFamily: "Georgia, 'Times New Roman', serif", lineHeight: 1.8, color: "#333" }}>
       
       <header style={{ marginBottom: 60 }}>
-        <h1 style={{ fontSize: 36, marginBottom: 4 }}>Surya Maddula</h1>
-        <p style={{ fontSize: 18, color: "#555", marginTop: 0 }}>Building physical-world intelligence infrastructure.</p>
+        <h1 style={{ fontSize: 36, marginBottom: 4 }}>surya maddula</h1>
+        <p style={{ fontSize: 18, color: "#555", marginTop: 0 }}>building physical-world intelligence infrastructure.</p>
       </header>
 
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
 
       <section style={{ marginBottom: 50 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 12 }}>Who I am</h2>
+        <h2 style={{ fontSize: 22, marginBottom: 12 }}>who i am</h2>
         <p>
-          I'm 18. I founded <strong><a href="https://whisperwave.in/">Whisperwave</a></strong> and patented an open-environment acoustic control system when I was 15. Backed by <strong>Emergent Ventures</strong>, <strong>1517 Fund</strong>, <strong>Microsoft</strong>, <strong>AWS</strong> and <strong>LocalHost</strong>.
+          i'm 18. i founded <strong><a href="https://whisperwave.in/">whisperwave</a></strong> and patented an open-environment acoustic control system when i was 15. backed by <strong>emergent ventures</strong>, <strong>1517 fund</strong>, <strong>microsoft</strong>, <strong>aws</strong> and <strong>localhost</strong>.
         </p>
         <p>
-          Research at <strong>Columbia</strong>. Advising at <strong>EVM Capital</strong>. Resident at <strong>Lossfunk</strong>. Previously <strong>Amazon</strong>, <strong>Shell</strong>, <strong>CIBC</strong>.
+          research at <strong>columbia</strong>. advising at <strong>evm capital</strong>. resident at <strong>lossfunk</strong>. previously <strong>amazon</strong>, <strong>shell</strong>, <strong>cibc</strong>.
         </p>
         <p style={{ fontStyle: "italic", color: "#444", marginTop: 20 }}>
-          Intelligence infrastructure that operates in the physical world — not just in software.
+          intelligence infrastructure that operates in the physical world — not just in software.
         </p>
       </section>
 
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
 
       <section style={{ marginBottom: 50 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 12 }}>What I focus on</h2>
+        <h2 style={{ fontSize: 22, marginBottom: 12 }}>what i focus on</h2>
         <ul style={{ paddingLeft: 20 }}>
-          <li style={{ marginBottom: 8 }}><strong>AI Infrastructure</strong> — Foundation models adapted for physical-world sensor data.</li>
-          <li style={{ marginBottom: 8 }}><strong>Acoustic Systems</strong> — Open-environment noise cancellation that actually works outdoors.</li>
-          <li style={{ marginBottom: 8 }}><strong>Hardware × Software</strong> — Embedded systems where code meets physics.</li>
-          <li style={{ marginBottom: 8 }}><strong>Climate Tech</strong> — Measurement and verification for carbon restoration.</li>
-          <li style={{ marginBottom: 8 }}><strong>Venture Building</strong> — Turning research into companies.</li>
+          <li style={{ marginBottom: 8 }}><strong>ai infrastructure</strong> — foundation models adapted for physical-world sensor data.</li>
+          <li style={{ marginBottom: 8 }}><strong>acoustic systems</strong> — open-environment noise cancellation that actually works outdoors.</li>
+          <li style={{ marginBottom: 8 }}><strong>hardware × software</strong> — embedded systems where code meets physics.</li>
+          <li style={{ marginBottom: 8 }}><strong>climate tech</strong> — measurement and verification for carbon restoration.</li>
+          <li style={{ marginBottom: 8 }}><strong>venture building</strong> — turning research into companies.</li>
         </ul>
       </section>
 
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
 
       <section style={{ marginBottom: 50 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 12 }}>Projects</h2>
+        <h2 style={{ fontSize: 22, marginBottom: 12 }}>projects</h2>
         <ul style={{ paddingLeft: 20 }}>
           <li style={{ marginBottom: 12 }}>
-            <strong>Open Air ANC</strong><br />
-            Open-environment noise cancellation system. Filed patent. The core wedge.
+            <strong>open air anc</strong><br />
+            open-environment noise cancellation system. filed patent. the core wedge.
           </li>
           <li style={{ marginBottom: 12 }}>
-            <strong>Digital MRV</strong><br />
-            Satellite-to-soil verification system for carbon restoration. Built at Shell.
+            <strong>digital mrv</strong><br />
+            satellite-to-soil verification system for carbon restoration. built at shell.
           </li>
           <li style={{ marginBottom: 12 }}>
-            <strong>Ecoligna</strong><br />
-            Transparent wood replacing glass. 70% energy reduction. TKS Moonshot.
+            <strong>ecoligna</strong><br />
+            transparent wood replacing glass. 70% energy reduction. tks moonshot.
           </li>
           <li style={{ marginBottom: 12 }}>
-            <strong>Future of Alexa</strong><br />
-            Gen Z product strategy for Amazon's voice platform.
+            <strong>future of alexa</strong><br />
+            gen z product strategy for amazon's voice platform.
           </li>
           <li style={{ marginBottom: 12 }}>
-            <strong>Future of Banking</strong><br />
-            Redesigned CIBC for a generation that won't visit branches.
+            <strong>future of banking</strong><br />
+            redesigned cibc for a generation that won't visit branches.
           </li>
         </ul>
 
-        <h3 style={{ fontSize: 18, marginTop: 30, marginBottom: 10, color: "#666" }}>Experiments</h3>
+        <h3 style={{ fontSize: 18, marginTop: 30, marginBottom: 10, color: "#666" }}>experiments</h3>
         <ul style={{ paddingLeft: 20 }}>
-          <li style={{ marginBottom: 10 }}><strong>ANC w/ Matplotlib</strong> — Software layer for ANC using AI and Matplotlib visualization.</li>
-          <li style={{ marginBottom: 10 }}><strong>Product Recommendation using ML</strong> — ML-powered recommendation model.</li>
-          <li style={{ marginBottom: 10 }}><strong>HDR Using ML</strong> — ML model that predicts handwritten numbers.</li>
+          <li style={{ marginBottom: 10 }}><strong>anc w/ matplotlib</strong> — software layer for anc using ai and matplotlib visualization.</li>
+          <li style={{ marginBottom: 10 }}><strong>product recommendation using ml</strong> — ml-powered recommendation model.</li>
+          <li style={{ marginBottom: 10 }}><strong>hdr using ml</strong> — ml model that predicts handwritten numbers.</li>
         </ul>
       </section>
 
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
 
       <section style={{ marginBottom: 50 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 16 }}><a href="https://suryamaddula.substack.com/">Surya's Sonnets</a></h2>
-        <blockquote>"The best infrastructure is invisible until it fails."</blockquote>
-        <blockquote>"Conviction is a signal. Doubt is a feature."</blockquote>
-        <blockquote>"Systems outlast strategies."</blockquote>
-        <blockquote>"Build for the constraint, not the consensus."</blockquote>
+        <h2 style={{ fontSize: 22, marginBottom: 16 }}><a href="https://suryamaddula.substack.com/">surya's sonnets</a></h2>
+        <blockquote>"the best infrastructure is invisible until it fails."</blockquote>
+        <blockquote>"conviction is a signal. doubt is a feature."</blockquote>
+        <blockquote>"systems outlast strategies."</blockquote>
+        <blockquote>"build for the constraint, not the consensus."</blockquote>
       </section>
 
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
 
       <section style={{ marginBottom: 50 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 12 }}>What I love</h2>
+        <h2 style={{ fontSize: 22, marginBottom: 12 }}>what i love</h2>
         <p>
-          Swimming, basketball, billiards, working out, and running.
+          swimming, basketball, billiards, working out, and running.
         </p>
         <p>
-          I also love to write — both my <a href="https://suryamaddula.substack.com/">newsletter</a> and my <a href="https://suryamaddula.medium.com">articles on AI and tech</a>.
+          i also love to write — both my <a href="https://suryamaddula.substack.com/">newsletter</a> and my <a href="https://suryamaddula.medium.com">articles on ai and tech</a>.
         </p>
       </section>
 
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
 
       <section style={{ marginBottom: 50 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 12 }}>What I'm building now</h2>
+        <h2 style={{ fontSize: 22, marginBottom: 12 }}>what i'm building now</h2>
         <ul style={{ paddingLeft: 20 }}>
-          <li style={{ marginBottom: 8 }}>Building open-environment acoustic control infrastructure at <strong><a href="https://whisperwave.in/">Whisperwave</a></strong>.</li>
-          <li style={{ marginBottom: 8 }}>Targeting industrial and transit environments.</li>
-          <li style={{ marginBottom: 8 }}>Designing v2 system architecture.</li>
-          <li style={{ marginBottom: 8 }}>Researching LLMs at <strong>Columbia</strong>.</li>
-          <li style={{ marginBottom: 8 }}>Advising at <strong>EVM Capital</strong>.</li>
-          
+          <li style={{ marginBottom: 8 }}>building open-environment acoustic control infrastructure at <strong><a href="https://whisperwave.in/">whisperwave</a></strong>.</li>
+          <li style={{ marginBottom: 8 }}>targeting industrial and transit environments.</li>
+          <li style={{ marginBottom: 8 }}>designing v2 system architecture.</li>
+          <li style={{ marginBottom: 8 }}>researching llms at <strong>columbia</strong>.</li>
+          <li style={{ marginBottom: 8 }}>advising at <strong>evm capital</strong>.</li>
         </ul>
       </section>
 
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
 
       <footer style={{ marginTop: 40 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 8 }}>Long-term alignment.</h2>
+        <h2 style={{ fontSize: 22, marginBottom: 8 }}>long-term alignment.</h2>
         <p style={{ marginBottom: 16 }}>
           <a href="mailto:me@suryamaddula.com">me@suryamaddula.com</a>
         </p>
         <p style={{ fontSize: 15 }}>
-          <a href="https://github.com/Surya893">GitHub</a> · {" "}
-          <a href="https://suryamaddula.medium.com">Medium</a> · {" "}
-          <a href="https://suryamaddula.substack.com">Substack</a> · {" "}
-          <a href="https://patents.google.com/patent/WO2024176209A2/en?q=(surya+maddula)&oq=surya+maddula">Patents</a> · {" "}
-          <a href="https://linkedin.com/in/suryaseshamaddula">LinkedIn</a> · {" "}
-          <a href="https://x.com/suryamaddula_">X</a> · {" "}
-          <a href="https://www.instagram.com/suryamaddula_/">Instagram</a>
+          <a href="https://github.com/Surya893">github</a> · {" "}
+          <a href="https://suryamaddula.medium.com">medium</a> · {" "}
+          <a href="https://suryamaddula.substack.com">substack</a> · {" "}
+          <a href="https://patents.google.com/patent/WO2024176209A2/en?q=(surya+maddula)&oq=surya+maddula">patents</a> · {" "}
+          <a href="https://linkedin.com/in/suryaseshamaddula">linkedin</a> · {" "}
+          <a href="https://x.com/suryamaddula_">x</a> · {" "}
+          <a href="https://www.instagram.com/suryamaddula_/">instagram</a>
         </p>
-        <p style={{ fontSize: 13, color: "#999", marginTop: 24 }}>Building deliberately.</p>
+        <p style={{ fontSize: 13, color: "#999", marginTop: 24 }}>building deliberately.</p>
       </footer>
     </main>
   );
