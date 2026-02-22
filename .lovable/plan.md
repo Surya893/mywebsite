@@ -1,100 +1,89 @@
 
 
-# Surya Maddula — Physical-World Intelligence Infrastructure
+# Complete Site Revamp — Surya Maddula
 
-## Creative Philosophy
-One continuous narrative scroll. Every pixel signals: **"He's building physical-world intelligence infrastructure — starting with open-environment acoustic control for industrial and transit spaces."** Restraint is the signal. Specificity is the proof. Capital is catalytic for enterprise distribution.
-
----
-
-## Design System
-- **Theme**: Light + Dark toggle (minimal, floating top-right)
-- **Typography**: Modern sans-serif (Inter or similar), large hero type, tight tracking, generous whitespace
-- **Colors**: White/dark base, deep charcoal text, single restrained accent gradient — no bright colors
-- **Depth**: 3-layer continuous parallax — foreground text, midground elements, background ambient motion
-- **Navigation**: Near-invisible. Floating dot progress indicator. Scroll is primary.
+The current site feels generic and flat. This revamp rebuilds every section to match the original creative vision: restraint as signal, specificity as proof, subliminal motion, and a continuous narrative that makes someone ask *"What's the specific wedge?"* — and find the answer already on the page.
 
 ---
 
-## Flow — One Continuous Narrative
+## What Changes
 
-### 1. The Opening (0–4 seconds)
-- Full-screen immersive. Soft gradient + subtle neural ambient motion (lightweight canvas, very faint)
-- **Hero line:** *"Building physical-world intelligence infrastructure."* — large, quiet, centered
-- **Subtext:** *"Built across hardware, ML, and distributed systems."* — small, surgical
-- Breathing chevron. Staggered spring-eased text reveal.
+### 1. Dark-First Design with Working Theme Toggle
+- Default to **dark mode** (the current `useTheme` hook forces light and removes dark). Dark feels more premium, more intentional.
+- Restore a working light/dark toggle (floating, top-right, minimal).
+- Refine the dark palette: deeper blacks (`hsl(230, 15%, 4%)`), slightly warmer foreground text, and a subtle cool-blue accent for hover states — no bright colors.
 
-### 2. The Signature Moment ✦ (5–8 seconds)
-- Scroll past hero → headline **disintegrates into particles** (400–600ms, subliminal)
-- Particles reform into the Orbit layout
-- Respects `prefers-reduced-motion`. Disabled below 60fps / low-power devices.
-- Pure CSS + lightweight canvas — no animation libraries
+### 2. Hero Section — Maximum Impact
+- Remove the subtitle line about "18 / Founder / Patent / Columbia / Backed by..." — that's resume noise in the hero. Move those signals downstream.
+- Hero becomes just:
+  - **"Surya Maddula"** — small, tracking-wide, understated
+  - **"Building physical-world intelligence infrastructure."** — large, quiet, centered
+  - Breathing chevron below
+- Larger whitespace. The hero should feel like walking into a room with one sentence on the wall.
 
-### 3. The Orbit — Focus Areas
-- Architectural. Slow gravitational drift. No bouncing.
-- **5 Nodes:** AI Infrastructure · Applied Systems · Venture Architecture · Long-Term Thinking · Writing
-- Hover → restrained glow + one sharp sentence connecting to physical-world intelligence thesis
-- Scroll → subtle depth parallax shift
+### 3. About Section — Tighter, More Conviction
+- Trim to two paragraphs max. Remove redundancy.
+- First paragraph: who + what (Whisperwave, patent at 15, backers).
+- Second paragraph: the thesis — one line, punchy. "Intelligence infrastructure that operates in the physical world — not just in software."
+- Drop the third paragraph that restates the thesis weakly.
 
-### 4. Philosophy Interjection #1
-- *"Infrastructure compounds."*
+### 4. Orbit Section — Real Hover Interactions
+- Keep the 5 focus nodes but add **hover tooltips** with one sharp sentence each connecting to the physical-world intelligence thesis.
+- Example: "AI Infrastructure" hover -> "Foundation models adapted for physical-world sensor data."
+- Subtle glow on hover (box-shadow with low opacity accent color). No bouncing.
 
-### 5. Selected Work — 5 Projects
-- Narrative arc: Measurement → Hardware → Material Science → Product Strategy → System Redesign
-  1. **Digital MRV** — *Satellite-to-soil verification system for carbon restoration.* · Shell
-  2. **Open Air ANC** — *Open-environment noise cancellation system. Filed patent.* · Patent
-  3. **Ecoligna** — *Transparent wood replacing glass. 70% energy reduction.* · TKS Moonshot
-  4. **Future of Alexa** — *Gen Z product strategy for Amazon's voice platform.* · Amazon
-  5. **Future of Banking** — *Redesigned CIBC for a generation that won't visit branches.* · CIBC
-- Spring entrance with depth blur. Hover: lift + shadow. Click: smooth modal, no layout shift.
+### 5. Projects Section — Narrative Arc Ordering + Better Cards
+- Reorder projects to follow the plan's narrative arc: Open Air ANC first (the wedge), then Digital MRV, Ecoligna, Future of Alexa, Future of Banking. Move the ML hobby projects (Matplotlib ANC, Product Recommendation, HDR) to a secondary "Experiments" grouping or remove them to keep signal high.
+- Cards get a left accent border on hover (2px, subtle).
+- Modal gets a slightly better layout with the tag as a colored pill.
 
-### 6. Philosophy Interjection #2
-- *"Constraints create leverage."*
+### 6. Writing Section — Real Links + Better Presentation
+- The current fragments link to "#" (nowhere). Replace with actual Medium/Substack URLs or remove the arrow icons if no real links exist yet.
+- Rename section label to match plan: "Surya's Sonnets" (already done).
 
-### 7. Trajectory Bridge
-- *"The next system will be larger."* — large, centered, maximum whitespace
+### 7. Building Now Section — Sharper Hierarchy
+- Add "Researching LLMs at Columbia" and "Advising at EVM Capital" lines (already in data but ensure they're prominent).
+- The "Now" label gets a subtle green dot (live signal indicator) — a 6px circle, `bg-emerald-500/60`, pulsing gently.
 
-### 8. Writing — Contemplative Space
-- Floating sentence fragments from Surya's writing
-- Click → full-screen contemplative view + outbound link to Medium/Substack
-- Background tone shifts quieter
+### 8. Close Section — Add Scarcity Signal
+- Below the social icons, add in low contrast, small font: *"Building deliberately. Access is selective."* — per the plan.
+- This is the final note. Discovered scarcity, not declared.
 
-### 9. What I'm Building Now — Live Signal (Leverage Core)
-- Directional and honest — no fabricated claims:
-  - **Now →** *Building open-environment acoustic control infrastructure*
-  - *Targeting industrial and transit environments*
-  - *Designing v2 system architecture*
-  - *Partnering where alignment compounds.*
-  - *Scaling deliberately.*
-- Specific wedge is named. Direction is clear. No false pilot claims.
-- Easy to update as real deployments materialize.
+### 9. Ambient Canvas — More Atmospheric
+- Increase particle count slightly (50 instead of 40).
+- Increase connection distance to 180px.
+- Make particles slightly more visible (opacity 0.08 instead of 0.06).
+- Add a very subtle radial gradient overlay behind the hero for depth.
 
-### 10. The Close
-- **CTA line:** *"Built for long-term alignment."* — large, quiet, centered
-- **me@suryamaddula.com** — elegant mailto with subtle hover animation
-- **Footer icons:** LinkedIn, X, Instagram, Medium, Substack, Google Patents — icon row with hover glow
-- **Scarcity signal (low contrast, small font):** *"Building deliberately. Access is selective."*
-- Light/dark toggle
+### 10. Scroll Progress — Polish
+- Dots slightly larger (2px instead of 1.5px).
+- Active dot gets a subtle glow (`box-shadow`).
+
+### 11. Typography & Spacing Refinements
+- Import Space Grotesk via Google Fonts in `index.html` (it's referenced in styles but never loaded).
+- Increase section padding for more breathing room.
+- Philosophy interjections get larger text and more vertical space — they should feel like pauses in a conversation.
 
 ---
 
-## Motion & Performance Rules
-- All motion: restrained, subliminal, spring-based
-- One signature moment only (particle disintegration)
-- Continuous 3-layer parallax throughout
-- `prefers-reduced-motion` fully respected
-- Heavy effects disabled below 60fps / low-power devices
-- Hero fonts preloaded. No heavy libraries. Pure CSS + lightweight canvas.
-- Pre-calculated modal layouts for zero layout shift
-- **Target: 90+ Lighthouse performance score**
+## Technical Details
 
----
+### Files Modified
+1. **`index.html`** — Add Space Grotesk font preload
+2. **`src/hooks/useTheme.ts`** — Restore working dark/light toggle with dark as default
+3. **`src/index.css`** — Refined dark palette, larger spacing utilities, green dot pulse keyframe
+4. **`src/pages/Index.tsx`** — Add ThemeToggle component back
+5. **`src/components/ThemeToggle.tsx`** — Wire up to working theme state
+6. **`src/components/HeroSection.tsx`** — Strip to essentials, add radial gradient overlay
+7. **`src/components/AboutSection.tsx`** — Tighten to 2 paragraphs
+8. **`src/components/OrbitSection.tsx`** — Add hover tooltips with thesis-connected sentences
+9. **`src/components/ProjectsSection.tsx`** — Reorder projects, improve card styling, accent border on hover
+10. **`src/components/WritingSection.tsx`** — Fix placeholder links or remove arrows
+11. **`src/components/BuildingNowSection.tsx`** — Add green live dot to "Now" label
+12. **`src/components/CloseSection.tsx`** — Add scarcity signal line
+13. **`src/components/AmbientCanvas.tsx`** — Increase atmospheric density
+14. **`src/components/ScrollProgress.tsx`** — Polish dot sizes and active glow
 
-## Tone & Copy Rules
-- Conviction, not pitch. Autonomy, not hustle.
-- **Wedge:** Open-environment acoustic control for industrial and transit spaces — specific, defensible, narrow enough to feel inevitable
-- **Domain:** Physical-world intelligence infrastructure — the expansion path from the wedge
-- Honest about current stage — directional language, not fabricated operational claims
-- Scarcity discovered, not declared
-- The site must cause: *"What's the specific wedge?"* → and the answer is already on the page.
+### No New Dependencies
+Everything uses existing Tailwind, CSS, and lightweight canvas. No animation libraries added.
 
