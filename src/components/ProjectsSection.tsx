@@ -10,24 +10,6 @@ const projects = [
     detail: "Designed and prototyped an active noise cancellation system that operates in open environments — where traditional ANC fails. Patent filed for the core acoustic control architecture.",
   },
   {
-    title: "ANC w/ Matplotlib",
-    desc: "Designed the software for an ANC system using AI and Matplotlib.",
-    tag: "Software",
-    detail: "Built the software layer for an active noise cancellation system, leveraging AI for signal processing and Matplotlib for real-time acoustic visualization and analysis.",
-  },
-  {
-    title: "Product Recommendation using ML",
-    desc: "ML-powered product recommendation model with open-source resources.",
-    tag: "ML",
-    detail: "Developed a machine learning product recommendation model and published related links and resources on GitHub for community use.",
-  },
-  {
-    title: "HDR Using ML",
-    desc: "ML model that predicts handwritten numbers and converts them to keyboard versions.",
-    tag: "ML",
-    detail: "Built a machine learning model that predicts the value of handwritten numbers and converts them into their respective keyboard versions using deep learning techniques.",
-  },
-  {
     title: "Digital MRV",
     desc: "Satellite-to-soil verification system for carbon restoration.",
     tag: "Shell",
@@ -53,13 +35,37 @@ const projects = [
   },
 ];
 
+const experiments = [
+  {
+    title: "ANC w/ Matplotlib",
+    desc: "Software layer for ANC using AI and Matplotlib visualization.",
+    tag: "Software",
+    detail: "Built the software layer for an active noise cancellation system, leveraging AI for signal processing and Matplotlib for real-time acoustic visualization and analysis.",
+  },
+  {
+    title: "Product Recommendation using ML",
+    desc: "ML-powered product recommendation model.",
+    tag: "ML",
+    detail: "Developed a machine learning product recommendation model and published related links and resources on GitHub for community use.",
+  },
+  {
+    title: "HDR Using ML",
+    desc: "ML model that predicts handwritten numbers.",
+    tag: "ML",
+    detail: "Built a machine learning model that predicts the value of handwritten numbers and converts them into their respective keyboard versions using deep learning techniques.",
+  },
+];
+
 const ProjectsSection = () => {
   const ref = useScrollReveal();
-  const [selected, setSelected] = useState<number | null>(null);
+  const [selected, setSelected] = useState<{ list: "main" | "exp"; index: number } | null>(null);
 
-  // Lock body scroll when modal is open
+  const selectedProject = selected
+    ? selected.list === "main" ? projects[selected.index] : experiments[selected.index]
+    : null;
+
   useEffect(() => {
-    if (selected !== null) {
+    if (selected) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
@@ -67,7 +73,6 @@ const ProjectsSection = () => {
     return () => { document.body.style.overflow = ""; };
   }, [selected]);
 
-  // Close on Escape
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setSelected(null);
@@ -76,41 +81,53 @@ const ProjectsSection = () => {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  const Card = ({ p, onClick, i }: { p: typeof projects[0]; onClick: () => void; i: number }) => (
+    <div
+      className={`reveal reveal-delay-${Math.min(i + 1, 5)} group cursor-pointer`}
+      onClick={onClick}
+    >
+      <div className="p-5 md:p-7 rounded-xl border border-border/40 bg-card/30 backdrop-blur-sm transition-all duration-500 hover:border-foreground/15 hover:shadow-xl hover:shadow-foreground/[0.03] hover:-translate-y-0.5 hover:border-l-accent-foreground/30 hover:border-l-2">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h3 className="text-base md:text-lg font-semibold text-foreground tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              {p.title}
+            </h3>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+              {p.desc}
+            </p>
+          </div>
+          <span className="text-xs text-muted-foreground/60 font-medium tracking-wider uppercase whitespace-nowrap mt-0.5">
+            {p.tag}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
-    <section id="projects" ref={ref} className="py-20 md:py-32 px-6 z-10 relative">
+    <section id="projects" ref={ref} className="py-24 md:py-40 px-6 z-10 relative">
       <div className="max-w-3xl mx-auto">
-        <p className="reveal text-xs tracking-[0.25em] uppercase text-muted-foreground/50 font-medium text-center mb-10">
+        <p className="reveal text-xs tracking-[0.25em] uppercase text-muted-foreground/50 font-medium text-center mb-12">
           My Work
         </p>
         <div className="space-y-3">
           {projects.map((p, i) => (
-            <div
-              key={p.title}
-              className={`reveal reveal-delay-${Math.min(i + 1, 5)} group cursor-pointer`}
-              onClick={() => setSelected(i)}
-            >
-              <div className="p-5 md:p-7 rounded-xl border border-border/40 bg-card/30 backdrop-blur-sm transition-all duration-500 hover:border-foreground/15 hover:shadow-xl hover:shadow-foreground/[0.03] hover:-translate-y-0.5">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-base md:text-lg font-semibold text-foreground tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                      {p.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                      {p.desc}
-                    </p>
-                  </div>
-                  <span className="text-xs text-muted-foreground/60 font-medium tracking-wider uppercase whitespace-nowrap mt-0.5">
-                    {p.tag}
-                  </span>
-                </div>
-              </div>
-            </div>
+            <Card key={p.title} p={p} i={i} onClick={() => setSelected({ list: "main", index: i })} />
+          ))}
+        </div>
+
+        <p className="reveal text-xs tracking-[0.25em] uppercase text-muted-foreground/40 font-medium text-center mt-16 mb-8">
+          Experiments
+        </p>
+        <div className="space-y-3">
+          {experiments.map((p, i) => (
+            <Card key={p.title} p={p} i={i} onClick={() => setSelected({ list: "exp", index: i })} />
           ))}
         </div>
       </div>
 
       {/* Modal */}
-      {selected !== null && (
+      {selectedProject && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-background/80 backdrop-blur-sm animate-in fade-in duration-200"
           onClick={() => setSelected(null)}
@@ -129,14 +146,14 @@ const ProjectsSection = () => {
             >
               <X className="w-4 h-4" />
             </button>
-            <span className="text-xs text-muted-foreground/60 font-medium tracking-wider uppercase">
-              {projects[selected].tag}
+            <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase rounded-full bg-accent text-accent-foreground">
+              {selectedProject.tag}
             </span>
-            <h3 id="project-title" className="mt-3 text-2xl font-semibold text-foreground tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-              {projects[selected].title}
+            <h3 id="project-title" className="mt-4 text-2xl font-semibold text-foreground tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              {selectedProject.title}
             </h3>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-              {projects[selected].detail}
+              {selectedProject.detail}
             </p>
           </div>
         </div>

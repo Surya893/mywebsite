@@ -15,7 +15,7 @@ const CloseSection = () => {
   const ref = useScrollReveal();
 
   return (
-    <footer id="close" ref={ref} className="py-20 md:py-32 px-6 z-10 relative">
+    <footer id="close" ref={ref} className="py-24 md:py-40 px-6 z-10 relative">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="reveal text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground tracking-tight leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           Long-term alignment.
@@ -44,6 +44,10 @@ const CloseSection = () => {
             </a>
           ))}
         </div>
+
+        <p className="reveal reveal-delay-4 mt-10 text-xs text-muted-foreground/30 tracking-wide font-light">
+          Building deliberately. Access is selective.
+        </p>
       </div>
     </footer>
   );

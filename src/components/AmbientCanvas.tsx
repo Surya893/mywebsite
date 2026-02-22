@@ -23,7 +23,7 @@ const AmbientCanvas = () => {
     resize();
     window.addEventListener("resize", resize);
 
-    const count = Math.min(40, Math.floor(window.innerWidth / 30));
+    const count = Math.min(50, Math.floor(window.innerWidth / 25));
     for (let i = 0; i < count; i++) {
       particles.push({
         x: Math.random() * canvas.width,
@@ -47,21 +47,20 @@ const AmbientCanvas = () => {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${color}, 0.06)`;
+        ctx.fillStyle = `rgba(${color}, 0.08)`;
         ctx.fill();
       });
 
-      // Draw faint connections
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 150) {
+          if (dist < 180) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(${color}, ${0.03 * (1 - dist / 150)})`;
+            ctx.strokeStyle = `rgba(${color}, ${0.035 * (1 - dist / 180)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
