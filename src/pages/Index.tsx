@@ -4,10 +4,12 @@ const Index = () => {
   return (
     <main style={{ maxWidth: 680, margin: "0 auto", padding: "60px 24px 80px", fontFamily: "Georgia, 'Times New Roman', serif", lineHeight: 1.8, color: "#333" }}>
       
-      <header style={{ marginBottom: 60 }}>
-        <img src={suryaPhoto} alt="surya maddula" style={{ width: 160, height: 160, objectFit: "cover", borderRadius: "50%", marginBottom: 20 }} />
-        <h1 style={{ fontSize: 36, marginBottom: 4 }}>surya maddula</h1>
-        <p style={{ fontSize: 18, color: "#555", marginTop: 0 }}>building physical-world intelligence infrastructure.</p>
+      <header style={{ marginBottom: 60, display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 30 }}>
+        <div>
+          <h1 style={{ fontSize: 36, marginBottom: 4 }}>surya maddula</h1>
+          <p style={{ fontSize: 18, color: "#555", marginTop: 0 }}>building physical-world intelligence infrastructure.</p>
+        </div>
+        <img src={suryaPhoto} alt="surya maddula" style={{ width: 200, objectFit: "cover", flexShrink: 0 }} />
       </header>
 
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
