@@ -1,23 +1,62 @@
 import suryaPhoto from "@/assets/surya.jpg";
+import { useState, useEffect } from "react";
 
 const Index = () => {
+  const [expanded, setExpanded] = useState(false);
   const extLink = { target: "_blank" as const, rel: "noopener noreferrer" };
+
+  useEffect(() => {
+    if (expanded) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [expanded]);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setExpanded(false); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
     <main style={{ maxWidth: 680, margin: "0 auto", padding: "60px 24px 80px", fontFamily: "Georgia, 'Times New Roman', serif", lineHeight: 1.8, color: "#333" }}>
 
-      {/* Fixed photo — always top right */}
+      {/* Overlay */}
+      <div
+        onClick={() => setExpanded(false)}
+        style={{
+          position: "fixed",
+          inset: 0,
+          background: "rgba(0,0,0,0.6)",
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
+          zIndex: 199,
+          opacity: expanded ? 1 : 0,
+          pointerEvents: expanded ? "auto" : "none",
+          transition: "opacity 0.3s ease",
+        }}
+      />
+
+      {/* Fixed photo — always top right, click to zoom */}
       <img
         src={suryaPhoto}
         alt="surya maddula"
+        onClick={() => setExpanded(prev => !prev)}
         style={{
           position: "fixed",
-          top: 20,
-          right: 20,
-          width: 128,
+          top: expanded ? "50%" : 20,
+          right: expanded ? "50%" : 20,
+          transform: expanded ? "translate(50%, -50%)" : "translate(0, 0)",
+          width: expanded ? "min(400px, 80vw)" : 128,
           objectFit: "cover",
-          borderRadius: 12,
-          boxShadow: "0 2px 12px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08)",
+          borderRadius: expanded ? 20 : 12,
+          boxShadow: expanded
+            ? "0 24px 80px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.15)"
+            : "0 2px 12px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08)",
+          cursor: "pointer",
+          transition: "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
           zIndex: 200,
         }}
       />
