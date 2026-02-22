@@ -1,112 +1,23 @@
 import suryaPhoto from "@/assets/surya.jpg";
-import { useState, useEffect, useRef, useCallback } from "react";
 
 const Index = () => {
-  const [scrolled, setScrolled] = useState(() => typeof window !== "undefined" && window.scrollY > 200);
-  const [expanded, setExpanded] = useState(false);
-  const photoRef = useRef<HTMLDivElement>(null);
-
-  // Use scroll listener with hysteresis to prevent flickering
-  useEffect(() => {
-    let ticking = false;
-    const onScroll = () => {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(() => {
-          const photoBottom = photoRef.current
-            ? photoRef.current.getBoundingClientRect().bottom
-            : 0;
-          setScrolled(photoBottom < -20);
-          ticking = false;
-        });
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const toggleExpand = useCallback(() => {
-    if (scrolled) setExpanded(prev => !prev);
-  }, [scrolled]);
-
-  useEffect(() => {
-    if (!scrolled) setExpanded(false);
-  }, [scrolled]);
-
-  // Lock body scroll when expanded
-  useEffect(() => {
-    if (expanded) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => { document.body.style.overflow = ""; };
-  }, [expanded]);
-
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setExpanded(false); };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
-
   const extLink = { target: "_blank" as const, rel: "noopener noreferrer" };
 
   return (
     <main style={{ maxWidth: 680, margin: "0 auto", padding: "60px 24px 80px", fontFamily: "Georgia, 'Times New Roman', serif", lineHeight: 1.8, color: "#333" }}>
 
-      {/* Expanded overlay */}
-      <div
-        onClick={() => setExpanded(false)}
-        style={{
-          position: "fixed",
-          inset: 0,
-          background: "rgba(0,0,0,0.6)",
-          backdropFilter: "blur(8px)",
-          WebkitBackdropFilter: "blur(8px)",
-          zIndex: 199,
-          opacity: expanded ? 1 : 0,
-          pointerEvents: expanded ? "auto" : "none",
-          transition: "opacity 0.3s ease",
-        }}
-      />
-
-      {/* Inline photo — always in DOM to prevent layout shift */}
-      <div ref={photoRef} style={{ display: "flex", justifyContent: "flex-end", marginBottom: 8 }}>
-        <img
-          src={suryaPhoto}
-          alt="surya maddula"
-          style={{
-            width: 280,
-            boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
-            objectFit: "cover",
-            borderRadius: 16,
-            opacity: scrolled ? 0 : 1,
-            transition: "opacity 0.4s ease",
-          }}
-        />
-      </div>
-
-      {/* Floating photo — always rendered, animated via opacity + transform */}
+      {/* Fixed photo — always top right */}
       <img
         src={suryaPhoto}
         alt="surya maddula"
-        onClick={toggleExpand}
         style={{
           position: "fixed",
-          top: expanded ? "50%" : 20,
-          right: expanded ? "50%" : 20,
-          transform: expanded ? "translate(50%, -50%)" : "translate(0, 0)",
-          width: expanded ? "min(400px, 80vw)" : 128,
+          top: 20,
+          right: 20,
+          width: 128,
           objectFit: "cover",
-          borderRadius: expanded ? 20 : 12,
-          boxShadow: expanded
-            ? "0 24px 80px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.15)"
-            : "0 2px 12px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08)",
-          cursor: scrolled ? "pointer" : "default",
-          opacity: scrolled ? 1 : 0,
-          pointerEvents: scrolled ? "auto" : "none",
-          transition: "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+          borderRadius: 12,
+          boxShadow: "0 2px 12px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08)",
           zIndex: 200,
         }}
       />
