@@ -2,7 +2,8 @@ import suryaPhoto from "@/assets/surya.jpg";
 import { useState, useEffect, useRef, useCallback } from "react";
 
 const Index = () => {
-  const [scrolled, setScrolled] = useState(false);
+  // Initialize based on current scroll position to prevent flash on refresh
+  const [scrolled, setScrolled] = useState(() => typeof window !== "undefined" && window.scrollY > 100);
   const [expanded, setExpanded] = useState(false);
   const sentinelRef = useRef<HTMLDivElement>(null);
 
@@ -21,12 +22,10 @@ const Index = () => {
     if (scrolled) setExpanded(prev => !prev);
   }, [scrolled]);
 
-  // Close expanded on scroll back to top
   useEffect(() => {
     if (!scrolled) setExpanded(false);
   }, [scrolled]);
 
-  // Close on escape
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setExpanded(false); };
     window.addEventListener("keydown", onKey);
@@ -52,20 +51,24 @@ const Index = () => {
         />
       )}
 
-      {/* Photo */}
-      <div ref={sentinelRef} style={{ display: scrolled ? "none" : "flex", justifyContent: "flex-end" }}>
-        <img
-          src={suryaPhoto}
-          alt="surya maddula"
-          style={{
-            width: 280,
-            boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
-            objectFit: "cover",
-            borderRadius: 16,
-            transition: "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-          }}
-        />
-      </div>
+      {/* Sentinel for intersection observer - always in DOM */}
+      <div ref={sentinelRef} style={{ height: 1, marginBottom: -1 }} />
+
+      {/* Inline photo - hidden when scrolled */}
+      {!scrolled && (
+        <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 8 }}>
+          <img
+            src={suryaPhoto}
+            alt="surya maddula"
+            style={{
+              width: 280,
+              boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
+              objectFit: "cover",
+              borderRadius: 16,
+            }}
+          />
+        </div>
+      )}
 
       {scrolled && (
         <img
