@@ -49,7 +49,7 @@ const Index = () => {
           top: expanded ? "50%" : 20,
           right: expanded ? "50%" : 20,
           transform: expanded ? "translate(50%, -50%)" : "translate(0, 0)",
-          width: expanded ? "min(400px, 80vw)" : 128,
+          width: expanded ? "min(500px, 85vw)" : 256,
           objectFit: "cover",
           borderRadius: expanded ? 20 : 12,
           boxShadow: expanded
