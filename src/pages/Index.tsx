@@ -1,35 +1,93 @@
 import suryaPhoto from "@/assets/surya.jpg";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 const Index = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const sentinelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setScrolled(!entry.isIntersecting),
+      { threshold: 0.5 }
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, []);
+
+  const toggleExpand = useCallback(() => {
+    if (scrolled) setExpanded(prev => !prev);
+  }, [scrolled]);
+
+  // Close expanded on scroll back to top
+  useEffect(() => {
+    if (!scrolled) setExpanded(false);
+  }, [scrolled]);
+
+  // Close on escape
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setExpanded(false); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, []);
 
   return (
     <main style={{ maxWidth: 680, margin: "0 auto", padding: "60px 24px 80px", fontFamily: "Georgia, 'Times New Roman', serif", lineHeight: 1.8, color: "#333" }}>
-      
-      {/* Floating photo */}
-      <img
-        src={suryaPhoto}
-        alt="surya maddula"
-        style={{
-          position: scrolled ? "fixed" : "static",
-          top: scrolled ? 20 : undefined,
-          right: scrolled ? 20 : undefined,
-          width: scrolled ? 80 : 200,
-          objectFit: "cover",
-          flexShrink: 0,
-          borderRadius: 16,
-          boxShadow: scrolled ? "0 4px 20px rgba(0,0,0,0.15)" : "none",
-          transition: "width 0.3s ease, box-shadow 0.3s ease",
-          zIndex: 100,
-        }}
-      />
+
+      {/* Expanded overlay */}
+      {expanded && (
+        <div
+          onClick={() => setExpanded(false)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.6)",
+            backdropFilter: "blur(8px)",
+            WebkitBackdropFilter: "blur(8px)",
+            zIndex: 199,
+            animation: "fadeIn 0.3s ease",
+          }}
+        />
+      )}
+
+      {/* Photo */}
+      <div ref={sentinelRef} style={{ display: scrolled ? "none" : "flex", justifyContent: "flex-end" }}>
+        <img
+          src={suryaPhoto}
+          alt="surya maddula"
+          style={{
+            width: 200,
+            objectFit: "cover",
+            borderRadius: 16,
+            transition: "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+          }}
+        />
+      </div>
+
+      {scrolled && (
+        <img
+          src={suryaPhoto}
+          alt="surya maddula"
+          onClick={toggleExpand}
+          style={{
+            position: "fixed",
+            top: expanded ? "50%" : 20,
+            right: expanded ? "50%" : 20,
+            transform: expanded ? "translate(50%, -50%)" : "translate(0, 0)",
+            width: expanded ? "min(400px, 80vw)" : 64,
+            objectFit: "cover",
+            borderRadius: expanded ? 20 : 12,
+            boxShadow: expanded
+              ? "0 24px 80px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.15)"
+              : "0 2px 12px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08)",
+            cursor: "pointer",
+            transition: "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            zIndex: 200,
+          }}
+        />
+      )}
 
       <header style={{ marginBottom: 60 }}>
         <div>
