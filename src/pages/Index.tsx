@@ -90,7 +90,7 @@ const Index = () => {
           <li style={{ marginBottom: 8 }}>Designing v2 system architecture.</li>
           <li style={{ marginBottom: 8 }}>Researching LLMs at <strong>Columbia</strong>.</li>
           <li style={{ marginBottom: 8 }}>Advising at <strong>EVM Capital</strong>.</li>
-          <li style={{ marginBottom: 8 }}>Partnering where alignment compounds.</li>
+          
         </ul>
       </section>
 
