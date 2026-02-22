@@ -73,7 +73,7 @@ const Index = () => {
           </li>
           <li style={{ marginBottom: 12 }}>
             <strong>future of banking</strong><br />
-            redesigned cibc for a generation that won't visit branches.
+            redesigned gtm for cibc bank for a generation that won't visit branches.
           </li>
           <li style={{ marginBottom: 12 }}>
             <strong>digital mrv innovations in east africa</strong><br />
