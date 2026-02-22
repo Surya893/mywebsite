@@ -45,10 +45,6 @@ const Index = () => {
             open-environment noise cancellation system. filed patent. the core wedge.
           </li>
           <li style={{ marginBottom: 12 }}>
-            <strong>digital mrv</strong><br />
-            satellite-to-soil verification system for carbon restoration. built at shell.
-          </li>
-          <li style={{ marginBottom: 12 }}>
             <strong>ecoligna</strong><br />
             transparent wood replacing glass. 70% energy reduction. tks moonshot.
           </li>
