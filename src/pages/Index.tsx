@@ -12,7 +12,7 @@ const Index = () => {
       <section style={{ marginBottom: 50 }}>
         <h2 style={{ fontSize: 22, marginBottom: 12 }}>Who I am</h2>
         <p>
-          I'm 18. I founded <strong>Whisperwave</strong> and patented an open-environment acoustic control system when I was 15. Backed by <strong>Emergent Ventures</strong>, <strong>1517 Fund</strong>, <strong>Microsoft</strong>, and <strong>AWS</strong>.
+          I'm 18. I founded <strong><a href="https://whisperwave.in/">Whisperwave</a></strong> and patented an open-environment acoustic control system when I was 15. Backed by <strong>Emergent Ventures</strong>, <strong>1517 Fund</strong>, <strong>Microsoft</strong>, and <strong>AWS</strong>.
         </p>
         <p>
           Research at <strong>Columbia</strong>. Advising at <strong>EVM Capital</strong>. Resident at <strong>Lossfunk</strong>. Previously <strong>Amazon</strong>, <strong>Shell</strong>, <strong>CIBC</strong>.
@@ -85,7 +85,7 @@ const Index = () => {
       <section style={{ marginBottom: 50 }}>
         <h2 style={{ fontSize: 22, marginBottom: 12 }}>What I'm building now</h2>
         <ul style={{ paddingLeft: 20 }}>
-          <li style={{ marginBottom: 8 }}>Building open-environment acoustic control infrastructure at <strong>Whisperwave</strong>.</li>
+          <li style={{ marginBottom: 8 }}>Building open-environment acoustic control infrastructure at <strong><a href="https://whisperwave.in/">Whisperwave</a></strong>.</li>
           <li style={{ marginBottom: 8 }}>Targeting industrial and transit environments.</li>
           <li style={{ marginBottom: 8 }}>Designing v2 system architecture.</li>
           <li style={{ marginBottom: 8 }}>Researching LLMs at <strong>Columbia</strong>.</li>
