@@ -1,9 +1,15 @@
 import suryaPhoto from "@/assets/surya.jpg";
 import { useState, useEffect } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Index = () => {
   const [expanded, setExpanded] = useState(false);
+  const isMobile = useIsMobile();
   const extLink = { target: "_blank" as const, rel: "noopener noreferrer" };
+
+  // Responsive image size: mobile 80px, tablet 140px, desktop 256px
+  const imgSize = isMobile ? 80 : (window.innerWidth < 1024 ? 140 : 256);
+  const imgOffset = isMobile ? 12 : 20;
 
   useEffect(() => {
     if (expanded) {
@@ -21,7 +27,7 @@ const Index = () => {
   }, []);
 
   return (
-    <main style={{ maxWidth: 680, margin: "0 auto", padding: "60px 24px 80px", fontFamily: "Georgia, 'Times New Roman', serif", lineHeight: 1.8, color: "#333" }}>
+    <main style={{ maxWidth: 680, margin: "0 auto", padding: isMobile ? "20px 16px 60px" : "60px 24px 80px", fontFamily: "Georgia, 'Times New Roman', serif", lineHeight: 1.8, color: "#333" }}>
 
       {/* Overlay */}
       <div
@@ -46,12 +52,12 @@ const Index = () => {
         onClick={() => setExpanded(prev => !prev)}
         style={{
           position: "fixed",
-          top: expanded ? "50%" : 20,
-          right: expanded ? "50%" : 20,
+          top: expanded ? "50%" : imgOffset,
+          right: expanded ? "50%" : imgOffset,
           transform: expanded ? "translate(50%, -50%)" : "translate(0, 0)",
-          width: expanded ? "min(500px, 85vw)" : 256,
+          width: expanded ? "min(500px, 85vw)" : imgSize,
           objectFit: "cover",
-          borderRadius: expanded ? 20 : 12,
+          borderRadius: expanded ? 20 : (isMobile ? 8 : 12),
           boxShadow: expanded
             ? "0 24px 80px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.15)"
             : "0 2px 12px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08)",
@@ -61,9 +67,9 @@ const Index = () => {
         }}
       />
 
-      <header style={{ marginBottom: 60 }}>
-        <h1 style={{ fontSize: 36, marginBottom: 4 }}>surya maddula</h1>
-        <p style={{ fontSize: 18, color: "#555", marginTop: 0 }}>building physical-world intelligence infrastructure.</p>
+      <header style={{ marginBottom: isMobile ? 36 : 60, paddingRight: isMobile ? imgSize + 20 : 0 }}>
+        <h1 style={{ fontSize: isMobile ? 24 : 36, marginBottom: 4 }}>surya maddula</h1>
+        <p style={{ fontSize: isMobile ? 14 : 18, color: "#555", marginTop: 0 }}>building physical-world intelligence infrastructure.</p>
       </header>
 
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
