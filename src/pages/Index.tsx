@@ -208,7 +208,7 @@ const Index = () => {
           <a href="https://x.com/suryamaddula_" {...extLink}>x</a> · {" "}
           <a href="https://www.instagram.com/suryamaddula_/" {...extLink}>instagram</a>
         </p>
-        <p style={{ fontSize: 13, color: "#999", marginTop: 24 }}>building deliberately.</p>
+        
         <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
         <p style={{ fontSize: 14, color: "#888", margin: 0 }}>surya maddula</p>
         <p style={{ fontSize: 13, color: "#aaa", margin: "4px 0 0" }}>© 2026</p>
