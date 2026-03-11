@@ -77,10 +77,10 @@ const Index = () => {
       <section style={{ marginBottom: 50 }}>
         <h2 style={{ fontSize: 22, marginBottom: 12 }}>who i am</h2>
         <p>
-          i'm 18. i founded <strong><a href="https://whisperwave.in/" {...extLink}>whisperwave</a></strong> and patented an open-environment acoustic control system when i was 15. backed by <strong>emergent ventures</strong>, <strong>1517 fund</strong>, <strong>microsoft</strong>, <strong>aws</strong> and <strong>localhost</strong>.
+          i'm 18. i founded <strong><a href="https://whisperwave.in/" {...extLink}>whisperwave</a></strong> and patented an open-environment acoustic control system when i was 15. backed by <strong>emergent ventures</strong>, <strong>1517 fund</strong>, <strong>anthropic</strong>, <strong>microsoft</strong>, <strong>aws</strong> and <strong>localhost</strong>.
         </p>
         <p>
-          research at <strong>columbia</strong>. advising at <strong><a href="https://www.evm.capital/" {...extLink}>evm capital</a></strong>. resident at <strong>lossfunk</strong>. previously <strong>amazon</strong>, <strong>shell</strong>, <strong>cibc</strong>.
+          research at <strong>columbia</strong>. investing + advising at <strong><a href="https://www.evm.capital/" {...extLink}>evm capital</a></strong>. resident at <strong>lossfunk</strong>. previously <strong>amazon</strong>, <strong>shell</strong>, <strong>cibc</strong>.
         </p>
 
         <h3 style={{ fontSize: 18, marginTop: 24, marginBottom: 10, color: "#666" }}>my journey</h3>
@@ -183,12 +183,10 @@ const Index = () => {
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
 
       <section style={{ marginBottom: 50 }}>
-        <h2 style={{ fontSize: 22, marginBottom: 12 }}>what i'm building now</h2>
+        <h2 style={{ fontSize: 22, marginBottom: 12 }}>what i'm working on now</h2>
         <ul style={{ paddingLeft: 20 }}>
-          <li style={{ marginBottom: 8 }}>building open-environment acoustic control infrastructure at <strong><a href="https://whisperwave.in/" {...extLink}>whisperwave</a></strong>.</li>
-          <li style={{ marginBottom: 8 }}>targeting industrial and transit environments.</li>
-          <li style={{ marginBottom: 8 }}>designing v2 system architecture.</li>
-          <li style={{ marginBottom: 8 }}>advising at <strong><a href="https://www.evm.capital/" {...extLink}>evm capital</a></strong>.</li>
+          <li style={{ marginBottom: 8 }}>building open-environment acoustic control infrastructure at <strong><a href="https://whisperwave.in/" {...extLink}>whisperwave</a></strong> — targeting industrial and transit environments, designing v2 system architecture.</li>
+          <li style={{ marginBottom: 8 }}>investing at <strong><a href="https://www.evm.capital/" {...extLink}>evm capital</a></strong>.</li>
         </ul>
       </section>
 
