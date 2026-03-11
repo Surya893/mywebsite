@@ -185,7 +185,7 @@ const Index = () => {
       <section style={{ marginBottom: 50 }}>
         <h2 style={{ fontSize: 22, marginBottom: 12 }}>what i'm working on now</h2>
         <ul style={{ paddingLeft: 20 }}>
-          <li style={{ marginBottom: 8 }}>building open-environment acoustic control infrastructure at <strong><a href="https://whisperwave.in/" {...extLink}>whisperwave</a></strong> — targeting industrial and transit environments, designing v2 system architecture.</li>
+          <li style={{ marginBottom: 8 }}>building active noise cancellation for open environments at <strong><a href="https://whisperwave.in/" {...extLink}>whisperwave</a></strong> targeting industrial and transit environments.</li>
           <li style={{ marginBottom: 8 }}>investing at <strong><a href="https://www.evm.capital/" {...extLink}>evm capital</a></strong>.</li>
         </ul>
       </section>
