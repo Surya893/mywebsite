@@ -70,6 +70,7 @@ const Index = () => {
       <header style={{ marginBottom: isMobile ? 36 : 60, paddingRight: isMobile ? imgSize + 20 : 0 }}>
         <h1 style={{ fontSize: isMobile ? 24 : 36, marginBottom: 4 }}>surya maddula</h1>
         <p style={{ fontSize: isMobile ? 14 : 18, color: "#555", marginTop: 0 }}>building physical-world intelligence infrastructure.</p>
+        <p style={{ fontSize: isMobile ? 13 : 16, color: "#666", marginTop: 8, fontStyle: "italic" }}>"the world is a museum of passion projects" – john collision</p>
       </header>
 
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
