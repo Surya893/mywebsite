@@ -78,7 +78,7 @@ const Index = () => {
       <section style={{ marginBottom: 50 }}>
         <h2 style={{ fontSize: 22, marginBottom: 12 }}>who i am</h2>
         <p>
-          i'm 18. i founded <strong><a href="https://whisperwave.in/" {...extLink}>whisperwave</a></strong> and patented an open-environment acoustic control system when i was 15. backed by <strong>emergent ventures</strong>, <strong>1517 fund</strong>, <strong>anthropic</strong>, <strong>microsoft</strong>, <strong>aws</strong> and <strong>localhost</strong>.
+          i'm 18. i founded <strong><a href="https://whisperwave.in/" {...extLink}>whisperwave</a></strong> and patented an open-environment acoustic control system when i was 15. grant-backed by <strong>emergent ventures</strong>, <strong>1517 fund</strong>, <strong>anthropic</strong>, <strong>microsoft</strong>, <strong>aws</strong> and <strong>localhost</strong>.
         </p>
         <p>
           research at <strong>columbia</strong>. investing + advising at <strong><a href="https://www.evm.capital/" {...extLink}>evm capital</a></strong>. resident at <strong>lossfunk</strong>. previously <strong>amazon</strong>, <strong>shell</strong>, <strong>cibc</strong>.
