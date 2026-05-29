@@ -81,7 +81,7 @@ const Index = () => {
           i'm 18. i founded <strong><a href="https://whisperwave.in/" {...extLink}>whisperwave</a></strong> and patented an open-environment acoustic control system when i was 15. grant-backed by <strong>emergent ventures</strong>, <strong>1517 fund</strong>, <strong>anthropic</strong>, <strong>microsoft</strong>, <strong>aws</strong> and <strong>localhost</strong>.
         </p>
         <p>
-          research at <strong>columbia</strong>. investing + advising at <strong><a href="https://www.evm.capital/" {...extLink}>evm capital</a></strong>. resident at <strong>lossfunk</strong>. previously <strong>amazon</strong>, <strong>shell</strong>, <strong>cibc</strong>.
+          research at <strong>columbia</strong>. advising at <strong><a href="https://www.evm.capital/" {...extLink}>evm capital</a></strong>. resident at <strong>lossfunk</strong>. previously <strong>amazon</strong>, <strong>shell</strong>, <strong>cibc</strong>.
         </p>
 
         <h3 style={{ fontSize: 18, marginTop: 24, marginBottom: 10, color: "#666" }}>my journey</h3>
