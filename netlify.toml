@@ -1,0 +1,8 @@
+# Netlify build settings. Netlify deploys every push to main and creates
+# deploy previews for pull requests.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
