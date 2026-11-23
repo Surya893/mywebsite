@@ -91,8 +91,8 @@ const Index = () => {
           <li style={{ marginBottom: 8 }}>consulted for mncs like <strong>cibc</strong>, <strong>shell</strong> & <strong>amazon</strong> at <strong>age 15</strong>.</li>
           <li style={{ marginBottom: 8 }}>worked on <strong>llms</strong> with <strong>columbia university</strong>. got a granted patent in india (& wipo) at <strong>age 16</strong>.</li>
           <li style={{ marginBottom: 8 }}>raised <strong>$45k</strong> & dropped out of uoft at <strong>age 17</strong> to build full-time.</li>
-          <li style={{ marginBottom: 8 }}>received a <strong>$350k</strong> grant from <strong>microsoft</strong> to build <strong>whisperwave</strong>.</li>
           <li style={{ marginBottom: 8 }}>got into <strong>iim b</strong> & partnered with india's <strong>best hardware lab</strong> at <strong>age 18</strong>.</li>
+          <li style={{ marginBottom: 8 }}>received a <strong>$350k</strong> grant from <strong>microsoft</strong> to build <strong>whisperwave</strong>.</li>
         </ul>
 
         <p style={{ fontStyle: "italic", color: "#444", marginTop: 20 }}>
@@ -108,7 +108,6 @@ const Index = () => {
           <li style={{ marginBottom: 8 }}><strong>ai infrastructure</strong> — foundation models adapted for physical-world sensor data.</li>
           <li style={{ marginBottom: 8 }}><strong>acoustic systems</strong> — open-environment noise cancellation that actually works outdoors.</li>
           <li style={{ marginBottom: 8 }}><strong>hardware × software</strong> — embedded systems where code meets physics.</li>
-          <li style={{ marginBottom: 8 }}><strong>climate tech</strong> — measurement and verification for carbon restoration.</li>
           <li style={{ marginBottom: 8 }}><strong>venture building</strong> — turning research into companies.</li>
         </ul>
       </section>
