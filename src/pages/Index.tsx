@@ -94,10 +94,6 @@ const Index = () => {
           <li style={{ marginBottom: 8 }}>got into <strong>iim b</strong> & partnered with india's <strong>best hardware lab</strong> at <strong>age 18</strong>.</li>
           <li style={{ marginBottom: 8 }}>received a <strong>$350k</strong> grant from <strong>microsoft</strong> and backed by <strong>barc</strong> scientists and execs from <strong>sennheiser</strong>.</li>
         </ul>
-
-        <p style={{ fontStyle: "italic", color: "#444", marginTop: 20 }}>
-          intelligence infrastructure that operates in the physical world — not just in software.
-        </p>
       </section>
 
       <hr style={{ border: "none", borderTop: "1px solid #ddd", margin: "40px 0" }} />
