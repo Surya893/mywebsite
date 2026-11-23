@@ -92,7 +92,7 @@ const Index = () => {
           <li style={{ marginBottom: 8 }}>worked on <strong>llms</strong> with <strong>columbia university</strong>. got a granted patent in india (& wipo) at <strong>age 16</strong>.</li>
           <li style={{ marginBottom: 8 }}>raised <strong>$45k</strong> & dropped out of uoft at <strong>age 17</strong> to build full-time.</li>
           <li style={{ marginBottom: 8 }}>got into <strong>iim b</strong> & partnered with india's <strong>best hardware lab</strong> at <strong>age 18</strong>.</li>
-          <li style={{ marginBottom: 8 }}>received a <strong>$350k</strong> grant from <strong>microsoft</strong> to build <strong>whisperwave</strong>.</li>
+          <li style={{ marginBottom: 8 }}>received a <strong>$350k</strong> grant from <strong>microsoft</strong> and backed by execs from <strong>sennheiser</strong> and <strong>BARC</strong> scientists.</li>
         </ul>
 
         <p style={{ fontStyle: "italic", color: "#444", marginTop: 20 }}>
